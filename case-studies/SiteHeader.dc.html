@@ -7,41 +7,45 @@
 </head>
 <body>
 <x-dc>
-<header style="position:sticky;top:0;z-index:100;background:rgba(244,240,230,0.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #DAD3C4;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif">
-  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px);height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px">
-    <a href="{{ logoHref }}" onClick="{{ closeMobile }}" style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:26px;letter-spacing:.01em;color:#16140E;text-decoration:none;white-space:nowrap">Dino Albizzati</a>
+<header style="position:sticky;top:0;z-index:100;background:rgba(19,19,17,0.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #26261F;font-family:'Archivo',Helvetica,Arial,sans-serif">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px);height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="{{ logoHref }}" onClick="{{ closeMobile }}" style="display:flex;align-items:baseline;gap:10px;text-decoration:none;white-space:nowrap">
+      <span style="font-family:'Archivo Black',sans-serif;font-size:30px;line-height:1;letter-spacing:-.07em;color:#F7D648">D.</span>
+      <span style="font-family:'Archivo',sans-serif;font-weight:700;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#FCFBF6">Albizzati</span>
+    </a>
 
-    <nav class="nav-desktop" style="align-items:center;gap:clamp(16px,2.4vw,34px)">
-      <a href="{{ aboutHref }}" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.02em;color:#45403A;text-decoration:none">About</a>
-      <a href="{{ experienceHref }}" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.02em;color:#45403A;text-decoration:none">Experience</a>
-      <a href="{{ caseHref }}" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.02em;color:#45403A;text-decoration:none">Case Studies</a>
-      <a href="{{ skillsHref }}" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.02em;color:#45403A;text-decoration:none">Skills</a>
-      <a href="{{ contactHref }}" style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.02em;color:#45403A;text-decoration:none">Contact</a>
-      <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.02em;color:#F4F0E6;background:#16140E;text-decoration:none;padding:11px 18px;border-radius:2px">Book a 15-Minute Intro Call</a>
+    <nav class="nav-desktop" style="align-items:center;gap:clamp(16px,2.4vw,32px)">
+      <a href="{{ aboutHref }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#DAD8D0;text-decoration:none" style-hover="color:#F7D648">About</a>
+      <a href="{{ experienceHref }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#DAD8D0;text-decoration:none" style-hover="color:#F7D648">Experience</a>
+      <a href="{{ caseHref }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#DAD8D0;text-decoration:none" style-hover="color:#F7D648">Case Studies</a>
+      <a href="{{ skillsHref }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#DAD8D0;text-decoration:none" style-hover="color:#F7D648">Skills</a>
+      <a href="{{ contactHref }}" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#DAD8D0;text-decoration:none" style-hover="color:#F7D648">Contact</a>
+      <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="font-family:'Archivo Black',sans-serif;font-size:12px;letter-spacing:.03em;color:#131311;background:#F7D648;text-decoration:none;padding:12px 18px" style-hover="background:#FCFBF6">Book a 15-Min Call →</a>
     </nav>
 
     <div class="nav-mobile">
-      <button onClick="{{ toggleMobile }}" aria-label="Menu" style="background:none;border:1px solid #C9C1B0;border-radius:2px;width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
-        <span style="display:block;width:20px;height:2px;background:#16140E"></span>
-        <span style="display:block;width:20px;height:2px;background:#16140E"></span>
-        <span style="display:block;width:20px;height:2px;background:#16140E"></span>
+      <button onClick="{{ toggleMobile }}" aria-label="Menu" style="background:none;border:1px solid #35352F;width:44px;height:44px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;padding:0">
+        <span style="display:block;width:20px;height:2px;background:#F7D648"></span>
+        <span style="display:block;width:20px;height:2px;background:#F7D648"></span>
+        <span style="display:block;width:20px;height:2px;background:#F7D648"></span>
       </button>
     </div>
   </div>
 
   <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
-    <div class="nav-mobile" style="border-top:1px solid #DAD3C4;background:#F4F0E6;padding:14px clamp(20px,5vw,56px) 22px;display:flex;flex-direction:column;gap:4px">
-      <a href="{{ aboutHref }}" onClick="{{ closeMobile }}" style="font-family:'Space Mono',monospace;font-size:15px;color:#16140E;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6DFD0">About</a>
-      <a href="{{ experienceHref }}" onClick="{{ closeMobile }}" style="font-family:'Space Mono',monospace;font-size:15px;color:#16140E;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6DFD0">Experience</a>
-      <a href="{{ caseHref }}" onClick="{{ closeMobile }}" style="font-family:'Space Mono',monospace;font-size:15px;color:#16140E;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6DFD0">Case Studies</a>
-      <a href="{{ skillsHref }}" onClick="{{ closeMobile }}" style="font-family:'Space Mono',monospace;font-size:15px;color:#16140E;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6DFD0">Skills</a>
-      <a href="{{ contactHref }}" onClick="{{ closeMobile }}" style="font-family:'Space Mono',monospace;font-size:15px;color:#16140E;text-decoration:none;padding:12px 0;border-bottom:1px solid #E6DFD0">Contact</a>
-      <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHeroMobile }}" style="margin-top:12px;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;text-align:center;color:#F4F0E6;background:#16140E;text-decoration:none;padding:14px;border-radius:2px">Book a 15-Minute Intro Call</a>
+    <div class="nav-mobile" style="border-top:1px solid #26261F;background:#131311;padding:14px clamp(20px,5vw,56px) 22px;display:flex;flex-direction:column;gap:2px">
+      <a href="{{ aboutHref }}" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FCFBF6;text-decoration:none;padding:13px 0;border-bottom:1px solid #26261F">About</a>
+      <a href="{{ experienceHref }}" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FCFBF6;text-decoration:none;padding:13px 0;border-bottom:1px solid #26261F">Experience</a>
+      <a href="{{ caseHref }}" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FCFBF6;text-decoration:none;padding:13px 0;border-bottom:1px solid #26261F">Case Studies</a>
+      <a href="{{ skillsHref }}" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FCFBF6;text-decoration:none;padding:13px 0;border-bottom:1px solid #26261F">Skills</a>
+      <a href="{{ contactHref }}" onClick="{{ closeMobile }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FCFBF6;text-decoration:none;padding:13px 0;border-bottom:1px solid #26261F">Contact</a>
+      <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHeroMobile }}" style="margin-top:14px;font-family:'Archivo Black',sans-serif;font-size:13px;text-align:center;color:#131311;background:#F7D648;text-decoration:none;padding:15px">Book a 15-Min Call →</a>
     </div>
   </sc-if>
 </header>
+
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:72},&quot;base&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:74},&quot;base&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { mobileOpen: false };
   track(name, params) {
@@ -49,7 +53,7 @@ class Component extends DCLogic {
   }
   renderVals() {
     const base = this.props.base || '';
-    const mk = (h) => base + h;
+    const mk = h => base + h;
     return {
       logoHref: mk('#top'),
       aboutHref: mk('#about'),
@@ -65,6 +69,7 @@ class Component extends DCLogic {
     };
   }
 }
+
 </script>
 </body>
 </html>

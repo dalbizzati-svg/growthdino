@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<div style="font-family:'Archivo',Helvetica,Arial,sans-serif">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:14px">
+    <div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">The creative — {{ counter }}</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6B63;margin-top:6px">{{ subtitle }}</div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button onClick="{{ prev }}" aria-label="Previous" style="width:44px;height:44px;background:transparent;border:1.5px solid #35352F;color:#FCFBF6;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;cursor:pointer" style-hover="border-color:#F7D648;color:#F7D648">←</button>
+      <button onClick="{{ next }}" aria-label="Next" style="width:44px;height:44px;background:#F7D648;border:none;color:#131311;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;cursor:pointer" style-hover="background:#FCFBF6">→</button>
+    </div>
+  </div>
+
+  <div style="overflow:hidden">
+    <div style="display:flex;gap:16px;transition:transform .5s cubic-bezier(.4,0,.2,1);transform:{{ track }}">
+      <sc-for list="{{ items }}" as="m" hint-placeholder-count="3">
+        <div style="width:340px;flex:0 0 340px;background:#1C1C18;border:1px solid #26261F">
+          <div style="aspect-ratio:4/5;background-image:repeating-linear-gradient(135deg,#232320 0 8px,#1C1C18 8px 16px);display:flex;flex-direction:column;justify-content:space-between;padding:14px">
+            <span style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:#F7D648;color:#131311;padding:5px 9px">{{ m.type }}</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8A8A80;background:#131311;padding:5px 8px;align-self:flex-start">{{ m.slot }}</span>
+          </div>
+          <div style="padding:16px;border-top:1px solid #26261F">
+            <div style="font-size:15px;line-height:1.4;color:#FCFBF6">{{ m.caption }}</div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:6px;margin-top:16px;flex-wrap:wrap">
+    <sc-for list="{{ dots }}" as="d" hint-placeholder-count="4">
+      <span onClick="{{ d.on }}" style="width:30px;height:4px;cursor:pointer;background:{{ d.bg }}"></span>
+    </sc-for>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:620},&quot;items&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{type:string,kind:string,src:string,caption:string}[]&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Drop the real assets into these slots — ads, emails, print, web.&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { i: 0, perView: 3 };
+
+  componentDidMount() {
+    this.fit();
+    this._on = () => this.fit();
+    window.addEventListener('resize', this._on);
+  }
+  componentWillUnmount() { window.removeEventListener('resize', this._on); }
+  fit() {
+    const w = window.innerWidth;
+    const perView = w < 720 ? 1 : w < 1080 ? 2 : 3;
+    if (perView !== this.state.perView) this.setState({ perView, i: 0 });
+  }
+
+  renderVals() {
+    const items = (this.props.items || []).map(m => ({
+      type: m.type || 'Creative',
+      caption: m.caption || '',
+      slot: (m.kind === 'video' ? 'video · ' : 'image · ') + String(m.src || '').split('/').pop()
+    }));
+    const max = Math.max(0, items.length - this.state.perView);
+    const i = Math.min(this.state.i, max);
+    const clamp = n => Math.min(max, Math.max(0, n));
+    return {
+      items,
+      counter: items.length ? `${i + 1}–${Math.min(items.length, i + this.state.perView)} of ${items.length}` : '—',
+      subtitle: this.props.subtitle || 'Drop the real assets into these slots — ads, emails, print, web.',
+      track: `translateX(${i * -356}px)`,
+      prev: () => this.setState(s => ({ i: clamp(s.i - 1) })),
+      next: () => this.setState(s => ({ i: clamp(s.i + 1) })),
+      dots: Array.from({ length: max + 1 }, (_, n) => ({
+        bg: i === n ? '#F7D648' : '#35352F',
+        on: () => this.setState({ i: n })
+      }))
+    };
+  }
+}
+
+</script>
+</body>
+</html>
