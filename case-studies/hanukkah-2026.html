@@ -72,51 +72,7 @@
 
     <section style="max-width:1180px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,56px)">
       <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#B04A2E;margin-bottom:clamp(24px,3vw,36px)">Campaign media</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2.5vw,28px)">
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:3/4;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/hanukkah/email-hanukkah.png" alt="Email — Hanukkah" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Email marketing — Hanukkah</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:3/4;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/hanukkah/email-shofar.png" alt="Email — The Shofar's Calling" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Email marketing — &ldquo;The Shofar&rsquo;s Calling&rdquo;</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/hanukkah/ad-holiday-1.png" alt="Hanukkah ad — cold contacts" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Regular campaign — cold contacts</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/hanukkah/ad-holiday-2.png" alt="Hanukkah ad — remarketing" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Remarketing ad — visited landing page, didn&rsquo;t purchase</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/shared/website-popup-desktop.jpg" alt="Website pop-up, desktop" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Website pop-up (desktop)</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:9/16;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/shared/website-popup-mobile.jpg" alt="Website pop-up, mobile" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Website pop-up (mobile)</figcaption>
-        </figure>
-
-      </div>
+      <dc-import name="Gallery" items="{{ media }}" case-name="Hanukkah 2026" hint-size="100%,640px"></dc-import>
     </section>
 
     <section style="background:#16140E;color:#F4F0E6;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);margin-top:clamp(24px,4vw,48px)">
@@ -169,7 +125,9 @@ class Component extends DCLogic {
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') window.gtag('event', name, params || {});
   }
   renderVals() {
-    return { trackCta: () => this.track('cta_hero_clicked', {}) };
+    const media = [{"type":"Ads","kind":"image","src":"../assets/hanukkah/ad-holiday-1.png","caption":"Regular campaign — cold contacts"},{"type":"Ads","kind":"image","src":"../assets/hanukkah/ad-holiday-2.png","caption":"Remarketing — visited landing page, didn’t purchase"},{"type":"Email","kind":"image","src":"../assets/hanukkah/email-hanukkah.png","caption":"Email marketing — Hanukkah"},{"type":"Email","kind":"image","src":"../assets/hanukkah/email-shofar.png","caption":"Email marketing — “The Shofar’s Calling”"},{"type":"Web","kind":"image","src":"../assets/shared/website-popup-desktop.jpg","caption":"Website pop-up (desktop)"},{"type":"Web","kind":"image","src":"../assets/shared/website-popup-mobile.jpg","caption":"Website pop-up (mobile)"}];
+    return {
+      media, trackCta: () => this.track('cta_hero_clicked', {}) };
   }
 }
 </script>

@@ -71,44 +71,7 @@
 
     <section style="max-width:1180px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,56px)">
       <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#B04A2E;margin-bottom:clamp(24px,3vw,36px)">Campaign media</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2.5vw,28px)">
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:9/16;background:#16140E;border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <video src="../assets/farmers-market/market-video.mp4" controls preload="metadata" playsinline onPlay="{{ trackVideo }}" style="width:100%;height:100%;object-fit:contain;display:block"></video>
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Farmers market presence</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/farmers-market/incentive-card-1.jpg" alt="Bagel + catering incentive card" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Bagel + catering incentive card</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/farmers-market/incentive-card-2.jpg" alt="Incentive card, alternate design" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Incentive card — alternate design</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:3/4;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/farmers-market/a-frame.jpg" alt="A-frame sign for winter markets" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">A-frame sign for winter markets</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:3/4;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/farmers-market/bagel-fest-sign.jpg" alt="Market signage — Bagel Fest" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Market signage — Bagel Fest</figcaption>
-        </figure>
-
-      </div>
+      <dc-import name="Gallery" items="{{ media }}" case-name="Farmers Market" hint-size="100%,640px"></dc-import>
     </section>
 
     <section style="background:#16140E;color:#F4F0E6;padding:clamp(56px,7vw,96px) clamp(20px,5vw,56px);margin-top:clamp(24px,4vw,48px)">
@@ -160,7 +123,9 @@ class Component extends DCLogic {
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') window.gtag('event', name, params || {});
   }
   renderVals() {
+    const media = [{"type":"Video","kind":"video","src":"../assets/farmers-market/market-video.mp4","caption":"Farmers market presence"},{"type":"Print","kind":"image","src":"../assets/farmers-market/incentive-card-1.jpg","caption":"Bagel + catering incentive card"},{"type":"Print","kind":"image","src":"../assets/farmers-market/incentive-card-2.jpg","caption":"Incentive card — alternate design"},{"type":"Print","kind":"image","src":"../assets/farmers-market/a-frame.jpg","caption":"A-frame sign for winter markets"},{"type":"Print","kind":"image","src":"../assets/farmers-market/bagel-fest-sign.jpg","caption":"Market signage — Bagel Fest"}];
     return {
+      media,
       trackVideo: () => this.track('case_study_media_viewed', { case_study_name: 'Farmers Market', media_type: 'video' }),
       trackCta: () => this.track('cta_hero_clicked', {})
     };

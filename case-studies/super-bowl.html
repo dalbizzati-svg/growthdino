@@ -93,51 +93,7 @@
     <!-- Media gallery -->
     <section style="max-width:1180px;margin:0 auto;padding:clamp(36px,5vw,64px) clamp(20px,5vw,56px)">
       <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#B04A2E;margin-bottom:clamp(24px,3vw,36px)">Campaign media — the execution was clean</div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2.5vw,28px)">
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/super-bowl/carousel-1.jpg" alt="Super Bowl carousel — cold contacts" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Regular campaign — cold contacts</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/super-bowl/carousel-2.jpg" alt="Super Bowl carousel card" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Carousel card</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:1/1;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/super-bowl/carousel-3.jpg" alt="Super Bowl carousel A/B version" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Carousel card — A/B version</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:9/16;background:#16140E;border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <video src="../assets/super-bowl/touchdown-ad.mp4" controls preload="metadata" playsinline onPlay="{{ trackVideo }}" style="width:100%;height:100%;object-fit:contain;display:block"></video>
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">&ldquo;Touchdown&rdquo; video ad</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/shared/website-popup-desktop.jpg" alt="Website pop-up, desktop" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">Website pop-up (desktop) — a main source of visits to the purchase site</figcaption>
-        </figure>
-
-        <figure style="margin:0">
-          <div style="aspect-ratio:4/3;background:repeating-linear-gradient(45deg,#EDE7D9,#EDE7D9 10px,#E6DFCE 10px,#E6DFCE 20px);border:1px solid #D6CEBC;border-radius:3px;overflow:hidden;display:flex;align-items:center;justify-content:center">
-            <img src="../assets/super-bowl/reheating-instructions.jpg" alt="Reheating instructions card" style="width:100%;height:100%;object-fit:cover;display:block" />
-          </div>
-          <figcaption style="font-family:'Space Mono',monospace;font-size:12px;color:#7A7364;margin-top:10px;line-height:1.5">8.5×5.5in (half-letter) reheating instructions</figcaption>
-        </figure>
-
-      </div>
+      <dc-import name="Gallery" items="{{ media }}" case-name="Super Bowl" hint-size="100%,640px"></dc-import>
     </section>
 
     <!-- Conclusion -->
@@ -183,7 +139,9 @@ class Component extends DCLogic {
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') window.gtag('event', name, params || {});
   }
   renderVals() {
+    const media = [{"type":"Video","kind":"video","src":"../assets/super-bowl/touchdown-ad.mp4","caption":"“Touchdown” video ad"},{"type":"Ads","kind":"image","src":"../assets/super-bowl/carousel-1.jpg","caption":"Regular campaign — cold contacts"},{"type":"Ads","kind":"image","src":"../assets/super-bowl/carousel-2.jpg","caption":"Carousel card"},{"type":"Ads","kind":"image","src":"../assets/super-bowl/carousel-3.jpg","caption":"Carousel card — A/B version"},{"type":"Print","kind":"image","src":"../assets/super-bowl/reheating-instructions.jpg","caption":"Half-letter (8.5×5.5in) reheating instructions"},{"type":"Web","kind":"image","src":"../assets/shared/website-popup-desktop.jpg","caption":"Website pop-up (desktop)"}];
     return {
+      media,
       trackVideo: () => this.track('case_study_media_viewed', { case_study_name: 'Super Bowl', media_type: 'video' }),
       trackCta: () => this.track('cta_hero_clicked', {})
     };
