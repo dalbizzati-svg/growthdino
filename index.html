@@ -18,7 +18,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,7 +31,6 @@
   "knowsAbout": ["Paid media", "Meta Ads", "Google Ads", "Email marketing", "Copywriting", "GA4", "Growth marketing", "Conversion rate optimization"]
 }
 </script>
-<!-- GA4 — replace G-XXXXXXXXXX with your Measurement ID after creating the property -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -40,326 +39,356 @@
   gtag('config', 'G-XXXXXXXXXX');
 </script>
 <style>
-  html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-  body { margin: 0; }
-  ::selection { background: #B04A2E; color: #F4F0E6; }
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { margin: 0; background: #131311; }
+  a { color: #F7D648; }
+  a:hover { color: #7FD4F2; }
+  ::selection { background: #F7D648; color: #131311; }
   .nav-desktop { display: flex; }
   .nav-mobile { display: none; }
-  @media (max-width: 860px) {
+  @media (max-width: 900px) {
     .nav-desktop { display: none; }
     .nav-mobile { display: block; }
   }
-  @keyframes cutline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes dinoMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 </style>
 </helmet>
-<div id="top" style="background:#F4F0E6;color:#16140E;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden">
 
-  <!-- ============ STICKY HEADER (shared) ============ -->
-  <dc-import name="SiteHeader" base="" hint-size="100%,72px"></dc-import>
+<div id="top" style="background:#131311;color:#FCFBF6;font-family:'Archivo',Helvetica,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden">
+
+  <dc-import name="SiteHeader" base="" hint-size="100%,74px"></dc-import>
 
   <main>
-    <!-- ============ HERO ============ -->
-    <section style="background:#16140E;color:#F4F0E6;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px) clamp(56px,7vw,88px)">
+    <!-- HERO -->
+    <section style="padding:clamp(56px,8vw,104px) clamp(20px,5vw,56px) clamp(40px,5vw,64px)">
       <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#D9663F;margin-bottom:26px">Dino Albizzati</div>
-        <h1 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(40px,6.6vw,88px);line-height:1.02;letter-spacing:-.01em;margin:0;max-width:15ch;text-wrap:balance">Full-funnel growth ownership — without a five-person team&rsquo;s price tag.</h1>
-        <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:rgba(244,240,230,0.74);max-width:56ch;margin:28px 0 0">I ran 100% of paid media, email, and analytics solo for a multi-location business, grounded in senior copywriting for <span style="color:#F4F0E6">Sony, PlayStation, HBO, Volkswagen, and Starwood</span>.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8A8A80;margin-bottom:clamp(24px,4vw,36px)">Growth Marketing · Creative Copywriting</div>
 
-        <div style="display:flex;flex-wrap:wrap;gap:14px;margin:38px 0 0">
-          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.02em;color:#16140E;background:#D9663F;text-decoration:none;padding:15px 26px;border-radius:2px">Book a 15-Minute Intro Call</a>
-          <a href="./Dino_Albizzati_CV.pdf" download onClick="{{ trackResume }}" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.02em;color:#F4F0E6;background:transparent;border:1px solid rgba(244,240,230,0.32);text-decoration:none;padding:15px 26px;border-radius:2px">Download My Resume ↓</a>
+        <div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,0.7fr);gap:clamp(28px,5vw,64px);align-items:end">
+          <h1 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(32px,4.8vw,64px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:22ch;text-wrap:balance">Full-funnel growth ownership — without a five-person team&rsquo;s price tag.</h1>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;text-align:right">
+            <span style="font-family:'Archivo Black',sans-serif;font-size:clamp(60px,8.5vw,116px);line-height:.78;letter-spacing:-.055em;color:#F7D648">dino</span>
+            <span style="display:flex;align-items:center;gap:12px;margin-top:12px">
+              <span style="font-family:'Archivo',sans-serif;font-weight:600;font-size:clamp(14px,2vw,21px);letter-spacing:.3em;text-transform:uppercase">Albizzati</span>
+              <span style="height:3px;width:clamp(24px,4vw,40px);background:#7FD4F2"></span>
+            </span>
+            <span style="display:flex;flex-direction:column;gap:5px;margin-top:clamp(20px,3vw,30px);font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(13px,1.5vw,17px);letter-spacing:.13em;text-transform:uppercase">
+              <span style="color:#F7D648">Data minded.</span>
+              <span style="color:#FCFBF6">Creative thinking.</span>
+              <span style="color:#7FD4F2">Result driven.</span>
+            </span>
+          </div>
+        </div>
+        <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:#DAD8D0;max-width:58ch;margin:24px 0 0;text-wrap:pretty">I ran 100% of paid media, email, and analytics solo for a multi-location business, grounded in senior copywriting for <span style="color:#FCFBF6;border-bottom:2px solid #F7D648">Sony, PlayStation, HBO, Volkswagen, and Starwood</span>.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0">
+          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.02em;color:#131311;background:#F7D648;text-decoration:none;padding:16px 26px" style-hover="background:#FCFBF6">Book a 15-Minute Intro Call</a>
+          <a href="./Dino_Albizzati_CV.pdf" download onClick="{{ trackResume }}" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;color:#FCFBF6;border:1.5px solid #35352F;text-decoration:none;padding:14.5px 26px" style-hover="border-color:#F7D648;color:#F7D648">Download My Resume ↓</a>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1px;background:rgba(244,240,230,0.14);border:1px solid rgba(244,240,230,0.14);margin-top:clamp(48px,6vw,76px)">
-          <div style="background:#16140E;padding:26px 24px">
-            <div style="font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;color:#D9663F;line-height:1">$7,472</div>
-            <div style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.5;color:rgba(244,240,230,0.66);margin-top:12px">Revenue in the highest-grossing campaign (Passover 2026)</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:clamp(44px,6vw,76px)">
+          <div style="background:#1C1C18;padding:26px 24px;border-left:3px solid #F7D648">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,46px);letter-spacing:-.04em;color:#F7D648;line-height:1">$7,472</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#8A8A80;margin-top:12px">REVENUE IN THE HIGHEST-GROSSING CAMPAIGN (PASSOVER 2026)</div>
           </div>
-          <div style="background:#16140E;padding:26px 24px">
-            <div style="font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;color:#D9663F;line-height:1">$150K+</div>
-            <div style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.5;color:rgba(244,240,230,0.66);margin-top:12px">Raised via equity crowdfunding, 200+ investors (Wefunder)</div>
+          <div style="background:#1C1C18;padding:26px 24px;border-left:3px solid #7FD4F2">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,46px);letter-spacing:-.04em;color:#7FD4F2;line-height:1">$150K+</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#8A8A80;margin-top:12px">RAISED VIA EQUITY CROWDFUNDING, 200+ INVESTORS (WEFUNDER)</div>
           </div>
-          <div style="background:#16140E;padding:26px 24px">
-            <div style="font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;color:#D9663F;line-height:1">7.79x</div>
-            <div style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.5;color:rgba(244,240,230,0.66);margin-top:12px">Best Meta Ads ROAS (Hanukkah, $406 budget)</div>
+          <div style="background:#1C1C18;padding:26px 24px;border-left:3px solid #F7D648">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,46px);letter-spacing:-.04em;color:#F7D648;line-height:1">7.79x</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#8A8A80;margin-top:12px">BEST META ADS ROAS (HANUKKAH, $406 BUDGET)</div>
           </div>
-          <div style="background:#16140E;padding:26px 24px">
-            <div style="font-family:'Space Mono',monospace;font-weight:700;font-size:clamp(32px,4vw,46px);letter-spacing:-.02em;color:#D9663F;line-height:1">45.29%</div>
-            <div style="font-family:'Space Mono',monospace;font-size:12.5px;line-height:1.5;color:rgba(244,240,230,0.66);margin-top:12px">Average email open rate (vs. ~20–25% industry benchmark)</div>
+          <div style="background:#1C1C18;padding:26px 24px;border-left:3px solid #7FD4F2">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,46px);letter-spacing:-.04em;color:#7FD4F2;line-height:1">45.29%</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#8A8A80;margin-top:12px">AVERAGE EMAIL OPEN RATE (VS. ~20–25% BENCHMARK)</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" style="background:#F4F0E6;padding:clamp(72px,10vw,140px) clamp(20px,5vw,56px)">
-      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(32px,5vw,72px)">
-        <div style="display:grid;grid-template-columns:minmax(220px,0.5fr) minmax(0,1.5fr);gap:clamp(28px,5vw,72px);align-items:start">
-          <div>
-            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#B04A2E">01 — About</div>
-            <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(30px,3.4vw,44px);line-height:1.08;letter-spacing:-.01em;margin:16px 0 0">I write what goes in the channels I run.</h2>
+    <!-- MARQUEE -->
+    <div style="overflow:hidden;background:#F7D648;color:#131311;padding:13px 0;white-space:nowrap">
+      <div style="display:inline-flex;gap:34px;animation:dinoMarquee 30s linear infinite;font-family:'Archivo Black',sans-serif;font-size:15px;letter-spacing:.06em;text-transform:uppercase">
+        <span>Paid media ✳ Email &amp; lifecycle ✳ GA4 &amp; attribution ✳ Conversion copywriting ✳ Paid media ✳ Email &amp; lifecycle ✳ GA4 &amp; attribution ✳ Conversion copywriting ✳</span>
+        <span>Paid media ✳ Email &amp; lifecycle ✳ GA4 &amp; attribution ✳ Conversion copywriting ✳ Paid media ✳ Email &amp; lifecycle ✳ GA4 &amp; attribution ✳ Conversion copywriting ✳</span>
+      </div>
+    </div>
+
+    <!-- WHAT I DO -->
+    <section style="padding:clamp(44px,6vw,72px) clamp(20px,5vw,56px) clamp(8px,2vw,16px)">
+      <div style="max-width:1180px;margin:0 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80;margin-bottom:clamp(20px,3vw,28px)">What I do — two halves of the same job</div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px;margin-top:12px">
+          <div style="background:#F7D648;color:#131311;padding:clamp(26px,3vw,34px)">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3vw,34px);letter-spacing:-.04em;line-height:1">Growth</div>
+            <p style="font-size:16px;line-height:1.6;margin:12px 0 0;max-width:44ch;text-wrap:pretty">Funnel diagnosis, paid media structure, experiments with a single decision KPI, and reporting ownership can read in two minutes.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em">
+              <span style="border:1px solid #131311;padding:7px 11px">PAID MEDIA</span>
+              <span style="border:1px solid #131311;padding:7px 11px">GA4 &amp; ATTRIBUTION</span>
+              <span style="border:1px solid #131311;padding:7px 11px">CRO</span>
+              <span style="border:1px solid #131311;padding:7px 11px">EMAIL &amp; LIFECYCLE</span>
+            </div>
           </div>
-          <div style="font-size:clamp(16px,1.35vw,18.5px);line-height:1.72;color:#2C2820;max-width:64ch">
-            <p style="margin:0 0 1.1em">Before I ran growth, I wrote copy for Sony, PlayStation, HBO, Volkswagen, and Starwood — five years as a senior copywriter that&rsquo;s still the foundation everything else is built on. I don&rsquo;t just run channels. I write what goes in them.</p>
-            <p style="margin:0 0 1.1em">From there I moved into growth ownership. Two years managing content and paid marketing across multiple client accounts inside a digital agency (CandidLeap, 2022–2024). Freelance growth consulting for B2B and real estate clients along the way. And most recently, two years owning 100% of marketing for Zeitlin&rsquo;s Delicatessen — paid media, email, GA4 attribution, weekly reporting to ownership, creative direction — entirely remote from Argentina. That role also included leading a Wefunder equity crowdfunding round that raised $150K+ from 200+ investors.</p>
-            <p style="margin:0 0 1.1em">I&rsquo;m not a one-channel specialist. I&rsquo;m who you bring in to own outcomes end-to-end — including reading the data honestly when something doesn&rsquo;t work, and changing course because of it. <a href="#case-study-4" style="color:#B04A2E;text-decoration:underline;text-underline-offset:2px">(See the Super Bowl case study below — the one that didn&rsquo;t work, and what I did about it.)</a></p>
-            <p style="margin:0 0 1.6em">I&rsquo;m currently looking for Head of Marketing / Growth Marketing Manager roles at startups and SMBs (10–100 people), where that kind of ownership is the job — not a nice-to-have.</p>
-            <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.02em;color:#16140E;border-bottom:2px solid #B04A2E;text-decoration:none;padding-bottom:3px">Book a 15-Minute Intro Call →</a>
+          <div style="background:#1C1C18;border:1px solid #26261F;padding:clamp(26px,3vw,34px)">
+            <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(28px,3vw,34px);letter-spacing:-.04em;line-height:1;color:#7FD4F2">Creative<br>Copywriting</div>
+            <p style="font-size:16px;line-height:1.6;color:#DAD8D0;margin:12px 0 0;max-width:44ch;text-wrap:pretty">Promise, angles, and scripts — ten years of senior copywriting behind every channel I run. Copy that holds a whole idea, not one clever line.</p>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.12em;color:#8A8A80">
+              <span style="border:1px dashed #4A4A42;padding:7px 11px">LANDING PAGES</span>
+              <span style="border:1px dashed #4A4A42;padding:7px 11px">ADS</span>
+              <span style="border:1px dashed #4A4A42;padding:7px 11px">EMAIL</span>
+              <span style="border:1px dashed #4A4A42;padding:7px 11px">BRAND MESSAGE</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ EXPERIENCE ============ -->
-    <section id="experience" style="background:#EDE7D9;padding:clamp(72px,10vw,140px) clamp(20px,5vw,56px);border-top:1px solid #DED7C7;border-bottom:1px solid #DED7C7">
+    <!-- ABOUT -->
+    <section id="about" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(220px,0.5fr) minmax(0,1.5fr);gap:clamp(28px,5vw,72px);align-items:start">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">01 — About</div>
+          <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-.04em;margin:16px 0 0">I write what goes in the channels I run.</h2>
+        </div>
+        <div style="font-size:clamp(16px,1.35vw,18.5px);line-height:1.72;color:#DAD8D0;max-width:64ch">
+          <p style="margin:0 0 1.1em;text-wrap:pretty">Before I ran growth, I wrote copy for Sony, PlayStation, HBO, Volkswagen, and Starwood — five years as a senior copywriter that&rsquo;s still the foundation everything else is built on. I don&rsquo;t just run channels. I write what goes in them.</p>
+          <p style="margin:0 0 1.1em;text-wrap:pretty">From there I moved into growth ownership. Two years managing content and paid marketing across multiple client accounts inside a digital agency (CandidLeap, 2022–2024). Freelance growth consulting for B2B and real estate clients along the way. And most recently, two years owning 100% of marketing for Zeitlin&rsquo;s Delicatessen — paid media, email, GA4 attribution, weekly reporting to ownership, creative direction — entirely remote from Argentina. That role also included leading a Wefunder equity crowdfunding round that raised $150K+ from 200+ investors.</p>
+          <p style="margin:0 0 1.1em;text-wrap:pretty">I&rsquo;m not a one-channel specialist. I&rsquo;m who you bring in to own outcomes end-to-end — including reading the data honestly when something doesn&rsquo;t work, and changing course because of it. <a href="case-studies/super-bowl.dc.html" style="color:#7FD4F2">(See the Super Bowl case study — the one that didn&rsquo;t work, and what I did about it.)</a></p>
+          <p style="margin:0 0 1.6em;text-wrap:pretty">I&rsquo;m currently looking for Head of Marketing / Growth Marketing Manager roles at startups and SMBs (10–100 people), where that kind of ownership is the job — not a nice-to-have.</p>
+          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#FCFBF6;border-bottom:2px solid #F7D648;text-decoration:none;padding-bottom:4px">Book a 15-Minute Intro Call →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" style="background:#1C1C18;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px);border-top:1px solid #26261F;border-bottom:1px solid #26261F">
       <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#B04A2E">02 — Experience</div>
-        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.05;letter-spacing:-.01em;margin:16px 0 clamp(40px,5vw,64px);max-width:20ch">A working history, most recent first.</h2>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">02 — Experience</div>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 clamp(28px,4vw,44px);max-width:20ch">Ten years between the data and the copy.</h2>
 
         <div style="display:flex;flex-direction:column">
-          <!-- item -->
-          <div style="display:grid;grid-template-columns:minmax(190px,0.42fr) minmax(0,1.58fr);gap:clamp(20px,4vw,56px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #D6CEBC">
-            <div>
-              <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#16140E;letter-spacing:.01em">Jun 2024 – Jun 2026</div>
-              <div style="font-family:'Space Mono',monospace;font-size:12.5px;color:#7A7364;margin-top:6px">Chicago, IL — Remote</div>
+          <sc-for list="{{ latestJob }}" as="j" hint-placeholder-count="1">
+            <div style="display:grid;grid-template-columns:minmax(180px,0.4fr) minmax(0,1.6fr);gap:clamp(20px,4vw,56px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid #2C2C25">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:#F7D648">{{ j.dates }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80;margin-top:6px">{{ j.place }}</div>
+              </div>
+              <div>
+                <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em;margin:0">{{ j.role }} <span style="color:#5F5F57">·</span> <span style="color:#7FD4F2">{{ j.org }}</span></h3>
+                <p style="font-size:16px;line-height:1.68;color:#DAD8D0;margin:12px 0 0;max-width:70ch;text-wrap:pretty">{{ j.copy }}</p>
+              </div>
             </div>
-            <div>
-              <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.3vw,29px);line-height:1.15;margin:0">Marketing Manager <span style="color:#9A9384">·</span> Zeitlin&rsquo;s Delicatessen</h3>
-              <p style="font-size:16px;line-height:1.66;color:#3B362D;margin:12px 0 0;max-width:70ch">100% solo ownership of marketing for a Chicago restaurant and catering business, entirely remote from Argentina. Built GA4 + Meta Pixel analytics infrastructure from scratch with UTM attribution across all channels. Migrated an email list of ~5,000 subscribers from ActiveCampaign to Beehiiv with tag-based segmentation. Led a Wefunder equity crowdfunding campaign that raised $150K+ from 200+ investors. Developed loyalty, discount, and farmers market incentive programs. Managed a BentoBox-to-Toast Catering platform migration and onboarded a Social Media Manager. <a href="#case-studies" style="color:#B04A2E">See case studies below.</a></p>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:minmax(190px,0.42fr) minmax(0,1.58fr);gap:clamp(20px,4vw,56px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #D6CEBC">
-            <div>
-              <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#16140E">Jun 2022 – Jun 2024</div>
-              <div style="font-family:'Space Mono',monospace;font-size:12.5px;color:#7A7364;margin-top:6px">Los Angeles, CA — Remote</div>
-            </div>
-            <div>
-              <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.3vw,29px);line-height:1.15;margin:0">Digital Content &amp; Marketing Specialist <span style="color:#9A9384">·</span> CandidLeap</h3>
-              <p style="font-size:16px;line-height:1.66;color:#3B362D;margin:12px 0 0;max-width:70ch">Managed digital content and paid marketing for multiple client accounts across industries simultaneously. Executed paid and organic campaigns, SEO content, and email marketing in English and Spanish. Produced creative briefs, ad copy, and social media content aligned with client brand guidelines.</p>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:minmax(190px,0.42fr) minmax(0,1.58fr);gap:clamp(20px,4vw,56px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #D6CEBC">
-            <div>
-              <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#16140E">2018–2019 &amp; 2020–2022</div>
-              <div style="font-family:'Space Mono',monospace;font-size:12.5px;color:#7A7364;margin-top:6px">Freelance — B2B</div>
-            </div>
-            <div>
-              <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.3vw,29px);line-height:1.15;margin:0">Marketing Consultant <span style="color:#9A9384">·</span> SeaVision</h3>
-              <p style="font-size:16px;line-height:1.66;color:#3B362D;margin:12px 0 0;max-width:70ch">Content creation for social, paid ads, and email marketing for a B2B client, across two separate freelance engagement periods.</p>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:minmax(190px,0.42fr) minmax(0,1.58fr);gap:clamp(20px,4vw,56px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #D6CEBC">
-            <div>
-              <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#16140E">2019–2022</div>
-              <div style="font-family:'Space Mono',monospace;font-size:12.5px;color:#7A7364;margin-top:6px">Freelance — Real Estate</div>
-            </div>
-            <div>
-              <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.3vw,29px);line-height:1.15;margin:0">Freelance Marketing <span style="color:#9A9384">·</span> Oppel Inmuebles</h3>
-              <p style="font-size:16px;line-height:1.66;color:#3B362D;margin:12px 0 0;max-width:70ch">Social media, email marketing, ads, and website work for a real estate client — including full website development.</p>
-            </div>
-          </div>
-          <div style="display:grid;grid-template-columns:minmax(190px,0.42fr) minmax(0,1.58fr);gap:clamp(20px,4vw,56px);padding:clamp(26px,3vw,38px) 0;border-top:1px solid #D6CEBC;border-bottom:1px solid #D6CEBC">
-            <div>
-              <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#16140E">2009–2014</div>
-              <div style="font-family:'Space Mono',monospace;font-size:12.5px;color:#7A7364;margin-top:6px">Miami, FL</div>
-            </div>
-            <div>
-              <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.3vw,29px);line-height:1.15;margin:0">Senior Creative Copywriter <span style="color:#9A9384">·</span> M8 Digital Marketing Agency</h3>
-              <p style="font-size:16px;line-height:1.66;color:#3B362D;margin:12px 0 0;max-width:70ch">Led bilingual creative copy for major brand accounts including Sony, PlayStation, HBO, Volkswagen, and Starwood. Produced campaign concepts, scripts, and digital copy across paid, social, and email channels.</p>
-            </div>
-          </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid #2C2C25;padding-top:24px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80">Before this: CandidLeap, SeaVision, Oppel Inmuebles, and five years as a senior copywriter at M8 (Sony, PlayStation, HBO, Volkswagen, Starwood).</span>
+          <a href="Experience.dc.html" style="font-family:'Archivo Black',sans-serif;font-size:13px;color:#131311;background:#F7D648;text-decoration:none;padding:14px 22px" style-hover="background:#FCFBF6">Full working history →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ CASE STUDIES ============ -->
-    <section id="case-studies" style="background:#F4F0E6;padding:clamp(72px,10vw,140px) clamp(20px,5vw,56px)">
+    <!-- CASE STUDIES -->
+    <section id="case-studies" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
       <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#B04A2E">03 — Case Studies</div>
-        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.05;letter-spacing:-.01em;margin:16px 0 10px;max-width:24ch">Four campaigns from Zeitlin&rsquo;s — including the one that failed.</h2>
-        <p style="font-family:'Space Mono',monospace;font-size:13px;color:#7A7364;margin:0 0 clamp(36px,5vw,56px)">Four real campaigns from two years owning Zeitlin&rsquo;s marketing — each with its own page, metrics, and creative.</p>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">03 — Case Studies</div>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 12px;max-width:24ch">Four campaigns from Zeitlin&rsquo;s — including the one that failed.</h2>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8A80;margin:0 0 clamp(32px,4vw,48px)">Each with its own page: numbers first, creative up front, full data below.</p>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
-          <a href="case-studies/passover-2026.html" onClick="{{ trackCard1 }}" style="display:flex;flex-direction:column;border:1px solid #D6CEBC;background:#FBF9F3;border-radius:3px;padding:clamp(24px,3vw,38px);text-decoration:none;color:#16140E;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:#B04A2E;transform:translateY(-2px)">
-            <div style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#B04A2E;margin-bottom:14px">Holiday Campaign · Meta Ads · Email</div>
-            <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.4vw,31px);line-height:1.12;margin:0">Passover 2026: Full-Funnel Holiday Campaign</h3>
-            <p style="font-size:16px;line-height:1.55;color:#5A5347;margin:14px 0 0;max-width:44ch">&ldquo;$7,472 in a single campaign — Zeitlin&rsquo;s highest-revenue holiday to date.&rdquo;</p>
-            <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#B04A2E;margin-top:auto;padding-top:26px">Read the full case study →</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
+          <a href="case-studies/passover-2026.dc.html" onClick="{{ trackCard1 }}" style="display:flex;flex-direction:column;background:#F7D648;color:#131311;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px">Holiday · Meta Ads · Email</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1">$7,472</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Passover 2026: Full-Funnel Holiday Campaign</h3>
+            <p style="font-size:15.5px;line-height:1.55;margin:12px 0 0;max-width:44ch">Zeitlin&rsquo;s highest-revenue holiday to date — read price sensitivity in real time and adjusted mid-flight.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px">Read the case study →</span>
           </a>
-          <a href="case-studies/hanukkah-2026.html" onClick="{{ trackCard2 }}" style="display:flex;flex-direction:column;border:1px solid #D6CEBC;background:#FBF9F3;border-radius:3px;padding:clamp(24px,3vw,38px);text-decoration:none;color:#16140E;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:#B04A2E;transform:translateY(-2px)">
-            <div style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#B04A2E;margin-bottom:14px">Holiday Campaign · Meta Ads · Email</div>
-            <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.4vw,31px);line-height:1.12;margin:0">Hanukkah 2026 Meta Ads: Small Budget, High ROAS</h3>
-            <p style="font-size:16px;line-height:1.55;color:#5A5347;margin:14px 0 0;max-width:44ch">&ldquo;7.79x ROAS on a $406 budget — and the tracking gap I caught along the way.&rdquo;</p>
-            <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#B04A2E;margin-top:auto;padding-top:26px">Read the full case study →</span>
+          <a href="case-studies/hanukkah-2026.dc.html" onClick="{{ trackCard2 }}" style="display:flex;flex-direction:column;background:#7FD4F2;color:#131311;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#173A47;margin-bottom:16px">Holiday · Meta Ads · Email</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1">7.79x</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Hanukkah 2026 Meta Ads: Small Budget, High ROAS</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#173A47;margin:12px 0 0;max-width:44ch">7.79x ROAS on a $406 budget — and the tracking gap I caught along the way.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px">Read the case study →</span>
           </a>
-          <a href="case-studies/farmers-market.html" onClick="{{ trackCard3 }}" style="display:flex;flex-direction:column;border:1px solid #D6CEBC;background:#FBF9F3;border-radius:3px;padding:clamp(24px,3vw,38px);text-decoration:none;color:#16140E;transition:border-color .2s ease,transform .2s ease" style-hover="border-color:#B04A2E;transform:translateY(-2px)">
-            <div style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#B04A2E;margin-bottom:14px">Acquisition · Local/In-person · Email</div>
-            <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.4vw,31px);line-height:1.12;margin:0">Farmers Market Incentive Program</h3>
-            <p style="font-size:16px;line-height:1.55;color:#5A5347;margin:14px 0 0;max-width:44ch">&ldquo;Turned 11 one-off market touchpoints into a repeatable acquisition funnel.&rdquo;</p>
-            <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#B04A2E;margin-top:auto;padding-top:26px">Read the full case study →</span>
+          <a href="case-studies/farmers-market.dc.html" onClick="{{ trackCard3 }}" style="display:flex;flex-direction:column;background:#FCFBF6;color:#131311;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6B6B63;margin-bottom:16px">Acquisition · Local · Email</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1">11</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Farmers Market Incentive Program</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#3C3C36;margin:12px 0 0;max-width:44ch">Turned 11 one-off market touchpoints into a repeatable acquisition funnel.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px">Read the case study →</span>
           </a>
-          <a href="case-studies/super-bowl.html" onClick="{{ trackCard4 }}" style="display:flex;flex-direction:column;border:1px solid #16140E;background:#16140E;border-radius:3px;padding:clamp(24px,3vw,38px);text-decoration:none;color:#F4F0E6;transition:transform .2s ease" style-hover="transform:translateY(-2px)">
-            <div style="font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#D9663F;margin-bottom:14px">Meta Ads · Email · Postmortem</div>
-            <h3 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(22px,2.4vw,31px);line-height:1.12;margin:0;color:#F4F0E6">Super Bowl: What Didn&rsquo;t Work</h3>
-            <p style="font-size:16px;line-height:1.55;color:rgba(244,240,230,0.72);margin:14px 0 0;max-width:44ch">&ldquo;The campaign that failed — and the process change it led to.&rdquo;</p>
-            <span style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;color:#D9663F;margin-top:auto;padding-top:26px">Read the full case study →</span>
-          </a>
-        </div>
-
-        <div style="margin-top:clamp(40px,5vw,60px);text-align:center">
-          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.02em;color:#F4F0E6;background:#16140E;text-decoration:none;padding:15px 28px;border-radius:2px">Book a 15-Minute Intro Call</a>
+          <a href="case-studies/super-bowl.dc.html" onClick="{{ trackCard4 }}" style="display:flex;flex-direction:column;background:#131311;border:2px solid #F7D648;color:#FCFBF6;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#F7D648;margin-bottom:16px">Meta Ads · Email · Postmortem</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1;color:#F7D648">1 / 8 / 11</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Super Bowl: What Didn&rsquo;t Work</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#DAD8D0;margin:12px 0 0;max-width:44ch">The campaign that failed — and the process change it led to.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#F7D648;margin-top:auto;padding-top:26px">Read the case study →</span>
+          </a></p>
+          <p style="margin:0 0 1.6em;text-wrap:pretty">I&rsquo;m currently looking for Head of Marketing / Growth Marketing Manager roles at startups and SMBs (10–100 people), where that kind of ownership is the job — not a nice-to-have.</p>
+          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#FCFBF6;border-bottom:2px solid #F7D648;text-decoration:none;padding-bottom:4px">Book a 15-Minute Intro Call →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ SKILLS ============ -->
-    <section id="skills" style="background:#EDE7D9;padding:clamp(72px,10vw,140px) clamp(20px,5vw,56px);border-top:1px solid #DED7C7;border-bottom:1px solid #DED7C7">
+    <!-- EXPERIENCE -->
+    <section id="experience" style="background:#1C1C18;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px);border-top:1px solid #26261F;border-bottom:1px solid #26261F">
       <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#B04A2E">04 — Skills &amp; Expertise</div>
-        <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(30px,3.6vw,46px);line-height:1.05;letter-spacing:-.01em;margin:16px 0 clamp(40px,5vw,64px);max-width:22ch">The full stack I actually operate.</h2>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">02 — Experience</div>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 clamp(28px,4vw,44px);max-width:20ch">Ten years between the data and the copy.</h2>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1px;background:#D6CEBC;border:1px solid #D6CEBC">
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">Paid Media / Growth</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Meta Ads (advanced)</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Google Ads (advanced)</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Full-funnel DTC ownership</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">CRO / A/B testing</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Campaign management &amp; optimization</span>
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ latestJob }}" as="j" hint-placeholder-count="1">
+            <div style="display:grid;grid-template-columns:minmax(180px,0.4fr) minmax(0,1.6fr);gap:clamp(20px,4vw,56px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid #2C2C25">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:#F7D648">{{ j.dates }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80;margin-top:6px">{{ j.place }}</div>
+              </div>
+              <div>
+                <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em;margin:0">{{ j.role }} <span style="color:#5F5F57">·</span> <span style="color:#7FD4F2">{{ j.org }}</span></h3>
+                <p style="font-size:16px;line-height:1.68;color:#DAD8D0;margin:12px 0 0;max-width:70ch;text-wrap:pretty">{{ j.copy }}</p>
+              </div>
             </div>
-          </div>
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">Analytics / Tracking</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">GA4</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Meta Pixel</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Google Tag Manager</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Conversions API</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Attribution &amp; UTM (from scratch)</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Stakeholder reporting</span>
-            </div>
-          </div>
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">Email / Lifecycle</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Beehiiv</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">ActiveCampaign</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Segmentation</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Lifecycle sequences</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Migrations w/o list loss (5,000 subs)</span>
-            </div>
-          </div>
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">Landing Pages / Web</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Webflow</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Full website development</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Figma (wireframing)</span>
-            </div>
-          </div>
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">Copywriting / Creative</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">10+ yrs senior copywriting</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Conversion copywriting</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Creative strategy</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Ad copy</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Bilingual EN/ES</span>
-            </div>
-          </div>
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">Ops / Platforms</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Toast</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">BentoBox</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">ClickUp</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Loomly</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Canva</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Platform migrations</span>
-            </div>
-          </div>
-          <div style="background:#F4F0E6;padding:clamp(24px,3vw,32px)">
-            <div style="font-family:'Space Mono',monospace;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#B04A2E;margin-bottom:16px">AI / Automation</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Claude (daily operational use)</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Claude Code (terminal)</span>
-              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#2C2820;border:1px solid #C9C1B0;padding:6px 11px;border-radius:2px;background:#FBF9F3">Make (Integromat)</span>
-            </div>
-          </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid #2C2C25;padding-top:24px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80">Before this: CandidLeap, SeaVision, Oppel Inmuebles, and five years as a senior copywriter at M8 (Sony, PlayStation, HBO, Volkswagen, Starwood).</span>
+          <a href="Experience.dc.html" style="font-family:'Archivo Black',sans-serif;font-size:13px;color:#131311;background:#F7D648;text-decoration:none;padding:14px 22px" style-hover="background:#FCFBF6">Full working history →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
-    <section id="contact" style="background:#16140E;color:#F4F0E6;padding:clamp(72px,10vw,140px) clamp(20px,5vw,56px)">
-      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(40px,6vw,88px);align-items:start">
+    <!-- CASE STUDIES -->
+    <section id="case-studies" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
+      <div style="max-width:1180px;margin:0 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">03 — Case Studies</div>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 12px;max-width:24ch">Four campaigns from Zeitlin&rsquo;s — including the one that failed.</h2>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8A80;margin:0 0 clamp(32px,4vw,48px)">Each with its own page: numbers first, creative up front, full data below.</p>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
+          <a href="case-studies/passover-2026.dc.html" onClick="{{ trackCard1 }}" style="display:flex;flex-direction:column;background:#F7D648;color:#131311;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px">Holiday · Meta Ads · Email</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1">$7,472</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Passover 2026: Full-Funnel Holiday Campaign</h3>
+            <p style="font-size:15.5px;line-height:1.55;margin:12px 0 0;max-width:44ch">Zeitlin&rsquo;s highest-revenue holiday to date — read price sensitivity in real time and adjusted mid-flight.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px;border-bottom:0">Read the case study →</span>
+          </a>
+          <a href="case-studies/hanukkah-2026.dc.html" onClick="{{ trackCard2 }}" style="display:flex;flex-direction:column;background:#1C1C18;border:1px solid #26261F;color:#FCFBF6;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease,border-color .2s ease" style-hover="transform:translateY(-3px);border-color:#F7D648">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A80;margin-bottom:16px">Holiday · Meta Ads · Email</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1;color:#7FD4F2">7.79x</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Hanukkah 2026 Meta Ads: Small Budget, High ROAS</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#DAD8D0;margin:12px 0 0;max-width:44ch">7.79x ROAS on a $406 budget — and the tracking gap I caught along the way.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#F7D648;margin-top:auto;padding-top:26px">Read the case study →</span>
+          </a>
+          <a href="case-studies/farmers-market.dc.html" onClick="{{ trackCard3 }}" style="display:flex;flex-direction:column;background:#1C1C18;border:1px solid #26261F;color:#FCFBF6;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease,border-color .2s ease" style-hover="transform:translateY(-3px);border-color:#F7D648">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A80;margin-bottom:16px">Acquisition · Local · Email</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1;color:#7FD4F2">11</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Farmers Market Incentive Program</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#DAD8D0;margin:12px 0 0;max-width:44ch">Turned 11 one-off market touchpoints into a repeatable acquisition funnel.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#F7D648;margin-top:auto;padding-top:26px">Read the case study →</span>
+          </a>
+          <a href="case-studies/super-bowl.dc.html" onClick="{{ trackCard4 }}" style="display:flex;flex-direction:column;background:#FCFBF6;color:#131311;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease" style-hover="transform:translateY(-3px)">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6B6B63;margin-bottom:16px">Meta Ads · Email · Postmortem</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1">1 / 8 / 11</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Super Bowl: What Didn&rsquo;t Work</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#3C3C36;margin:12px 0 0;max-width:44ch">The campaign that failed — and the process change it led to.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px">Read the case study →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" style="background:#1C1C18;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px);border-top:1px solid #26261F;border-bottom:1px solid #26261F">
+      <div style="max-width:1180px;margin:0 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">04 — Skills &amp; Expertise</div>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 clamp(36px,5vw,56px);max-width:22ch">The full stack I actually operate.</h2>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
+          <sc-for list="{{ skills }}" as="s" hint-placeholder-count="7">
+            <div style="background:#232320;border:1px solid #35352F;padding:28px">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#F7D648;margin-bottom:18px">{{ s.group }}</div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px">
+                <sc-for list="{{ s.items }}" as="t" hint-placeholder-count="4">
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:14px;color:#FCFBF6;border:1px solid #4A4A42;padding:9px 13px">{{ t }}</span>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(36px,6vw,80px);align-items:start">
         <div>
-          <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#D9663F">05 — Contact</div>
-          <h2 style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:clamp(32px,4vw,54px);line-height:1.04;letter-spacing:-.01em;margin:16px 0 0;max-width:16ch;text-wrap:balance">Have 15 minutes to talk about your marketing?</h2>
-          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;margin-top:28px;font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.02em;color:#16140E;background:#D9663F;text-decoration:none;padding:15px 26px;border-radius:2px">Book a 15-Minute Intro Call</a>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">05 — Contact</div>
+          <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(30px,4vw,54px);line-height:.98;letter-spacing:-.045em;margin:16px 0 0;max-width:16ch;text-wrap:balance">Have 15 minutes to talk about your marketing?</h2>
+          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;margin-top:28px;font-family:'Archivo Black',sans-serif;font-size:14px;color:#131311;background:#F7D648;text-decoration:none;padding:16px 26px" style-hover="background:#FCFBF6">Book a 15-Minute Intro Call</a>
 
-          <div style="margin-top:clamp(36px,5vw,52px);display:flex;flex-direction:column;gap:14px">
-            <a href="mailto:dalbizzati@gmail.com" style="font-family:'Space Mono',monospace;font-size:14px;color:#F4F0E6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8474;min-width:82px">Email</span>dalbizzati@gmail.com</a>
-            <a href="tel:+5491161213289" style="font-family:'Space Mono',monospace;font-size:14px;color:#F4F0E6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8474;min-width:82px">Phone</span>+54 9 11 6121-3289</a>
-            <div style="font-family:'Space Mono',monospace;font-size:14px;color:#F4F0E6;display:flex;gap:12px"><span style="color:#8A8474;min-width:82px">Based in</span>Argentina — remote, comfortable across time zones</div>
-            <a href="https://www.linkedin.com/in/dinoalbizzati/" target="_blank" rel="noopener" style="font-family:'Space Mono',monospace;font-size:14px;color:#F4F0E6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8474;min-width:82px">LinkedIn</span><span style="border-bottom:1px solid #D9663F;padding-bottom:1px">in/dinoalbizzati ↗</span></a>
-            <a href="./Dino_Albizzati_CV.pdf" download onClick="{{ trackResume }}" style="font-family:'Space Mono',monospace;font-size:14px;color:#F4F0E6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8474;min-width:82px">Resume</span><span style="border-bottom:1px solid #D9663F;padding-bottom:1px">Download PDF ↓</span></a>
+          <div style="margin-top:clamp(32px,5vw,48px);display:flex;flex-direction:column;gap:14px">
+            <a href="mailto:dalbizzati@gmail.com" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#FCFBF6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8A80;min-width:84px">Email</span>dalbizzati@gmail.com</a>
+            <a href="tel:+5491161213289" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#FCFBF6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8A80;min-width:84px">Phone</span>+54 9 11 6121-3289</a>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#FCFBF6;display:flex;gap:12px"><span style="color:#8A8A80;min-width:84px">Based in</span>Argentina — remote, comfortable across time zones</div>
+            <a href="https://www.linkedin.com/in/dinoalbizzati/" target="_blank" rel="noopener" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#FCFBF6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8A80;min-width:84px">LinkedIn</span><span style="border-bottom:1px solid #7FD4F2;padding-bottom:1px">in/dinoalbizzati ↗</span></a>
+            <a href="./Dino_Albizzati_CV.pdf" download onClick="{{ trackResume }}" style="font-family:'IBM Plex Mono',monospace;font-size:13.5px;color:#FCFBF6;text-decoration:none;display:flex;gap:12px"><span style="color:#8A8A80;min-width:84px">Resume</span><span style="border-bottom:1px solid #7FD4F2;padding-bottom:1px">Download PDF ↓</span></a>
           </div>
         </div>
 
         <div>
           <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-            <div style="border:1px solid rgba(244,240,230,0.2);background:rgba(217,102,63,0.1);border-radius:3px;padding:clamp(28px,4vw,44px)">
-              <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#D9663F;margin-bottom:12px">Message ready</div>
-              <p style="font-size:16px;line-height:1.6;color:#F4F0E6;margin:0">Your email client should have opened with the message drafted. If it didn&rsquo;t, reach me directly at <a href="mailto:dalbizzati@gmail.com" style="color:#D9663F">dalbizzati@gmail.com</a>. Talk soon.</p>
+            <div style="border:1px solid #35352F;background:#1C1C18;padding:clamp(26px,4vw,40px)">
+              <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#F7D648;margin-bottom:12px">Message ready</div>
+              <p style="font-size:16px;line-height:1.6;color:#DAD8D0;margin:0">Your email client should have opened with the message drafted. If it didn&rsquo;t, reach me directly at <a href="mailto:dalbizzati@gmail.com">dalbizzati@gmail.com</a>. Talk soon.</p>
             </div>
           </sc-if>
           <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
             <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:16px">
               <div>
-                <label style="display:block;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8A8474;margin-bottom:8px">Name</label>
-                <input name="name" type="text" required placeholder="Your name" style="width:100%;box-sizing:border-box;background:#1F1C14;border:1px solid rgba(244,240,230,0.2);border-radius:2px;color:#F4F0E6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;padding:13px 15px" />
+                <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A80;margin-bottom:8px">Name</label>
+                <input name="name" type="text" required placeholder="Your name" style="width:100%;box-sizing:border-box;background:#1C1C18;border:1px solid #35352F;color:#FCFBF6;font-family:'Archivo',sans-serif;font-size:15px;padding:14px 15px" />
               </div>
               <div>
-                <label style="display:block;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8A8474;margin-bottom:8px">Email</label>
-                <input name="email" type="email" required placeholder="you@company.com" style="width:100%;box-sizing:border-box;background:#1F1C14;border:1px solid rgba(244,240,230,0.2);border-radius:2px;color:#F4F0E6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;padding:13px 15px" />
+                <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A80;margin-bottom:8px">Email</label>
+                <input name="email" type="email" required placeholder="you@company.com" style="width:100%;box-sizing:border-box;background:#1C1C18;border:1px solid #35352F;color:#FCFBF6;font-family:'Archivo',sans-serif;font-size:15px;padding:14px 15px" />
               </div>
               <div>
-                <label style="display:block;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8A8474;margin-bottom:8px">Message</label>
-                <textarea name="message" rows="4" required placeholder="What are you working on?" style="width:100%;box-sizing:border-box;background:#1F1C14;border:1px solid rgba(244,240,230,0.2);border-radius:2px;color:#F4F0E6;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;padding:13px 15px;resize:vertical"></textarea>
+                <label style="display:block;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A80;margin-bottom:8px">Message</label>
+                <textarea name="message" rows="4" required placeholder="What are you working on?" style="width:100%;box-sizing:border-box;background:#1C1C18;border:1px solid #35352F;color:#FCFBF6;font-family:'Archivo',sans-serif;font-size:15px;padding:14px 15px;resize:vertical"></textarea>
               </div>
-              <button type="submit" style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700;letter-spacing:.02em;color:#16140E;background:#F4F0E6;border:none;border-radius:2px;padding:15px;cursor:pointer">Send Message →</button>
-              <p style="font-family:'Space Mono',monospace;font-size:11.5px;color:#6E695C;margin:0;line-height:1.5">Opens your email client with the message drafted. Ready to wire to Formspree if you prefer a backend form.</p>
+              <button type="submit" style="font-family:'Archivo Black',sans-serif;font-size:14px;color:#131311;background:#F7D648;border:none;padding:16px;cursor:pointer" style-hover="background:#FCFBF6">Send Message →</button>
+              <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6B63;margin:0;line-height:1.5">Opens your email client with the message drafted. Ready to wire to Formspree if you prefer a backend form.</p>
             </form>
           </sc-if>
         </div>
       </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
-    <footer style="background:#16140E;color:#F4F0E6;padding:0 clamp(20px,5vw,56px) clamp(40px,5vw,64px)">
-      <div style="max-width:1180px;margin:0 auto;border-top:1px solid rgba(244,240,230,0.14);padding-top:28px;display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center">
-        <div style="font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:22px">Dino Albizzati</div>
-        <div style="font-family:'Space Mono',monospace;font-size:12px;color:#8A8474">Last updated: August 2026</div>
+    <!-- FOOTER -->
+    <footer style="background:#F7D648;color:#131311;padding:clamp(36px,5vw,56px) clamp(20px,5vw,56px)">
+      <div style="max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end">
+        <a href="#top" style="display:flex;align-items:baseline;gap:12px;text-decoration:none;color:#131311">
+          <span style="font-family:'Archivo Black',sans-serif;font-size:52px;line-height:.8;letter-spacing:-.07em">D.</span>
+          <span style="font-family:'Archivo',sans-serif;font-weight:700;font-size:12px;letter-spacing:.3em;text-transform:uppercase">Albizzati</span>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:4px;font-family:'Archivo',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase">
+          <span>Data minded.</span>
+          <span>Creative thinking.</span>
+          <span>Result driven.</span>
+        </div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.06em">Last updated: August 2026</div>
       </div>
     </footer>
   </main>
 </div>
+
 </x-dc>
-<script type="text/x-dc" data-dc-script>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1440}}">
 class Component extends DCLogic {
-  state = { mobileOpen: false, open: { 1:false, 2:false, 3:false, 4:false }, sent: false };
+  state = { sent: false };
 
   track(name, params) {
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', name, params || {});
-    }
-  }
-
-  toggleCase(id, label) {
-    this.setState(s => ({ open: { ...s.open, [id]: !s.open[id] } }));
-    if (!this.state.open[id]) this.track('case_study_expanded', { case_study_name: label });
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') window.gtag('event', name, params || {});
   }
 
   onSubmit = (e) => {
@@ -375,40 +404,41 @@ class Component extends DCLogic {
     this.setState({ sent: true });
   };
 
+  jobs() {
+    return [
+      { dates: 'Jun 2024 – Jun 2026', place: 'Chicago, IL — Remote', role: 'Marketing Manager', org: 'Zeitlin’s Delicatessen', copy: '100% solo ownership of marketing for a Chicago restaurant and catering business, entirely remote from Argentina. Built GA4 + Meta Pixel analytics infrastructure from scratch with UTM attribution across all channels. Migrated an email list of ~5,000 subscribers from ActiveCampaign to Beehiiv with tag-based segmentation. Led a Wefunder equity crowdfunding campaign that raised $150K+ from 200+ investors. Developed loyalty, discount, and farmers market incentive programs. Managed a BentoBox-to-Toast Catering platform migration and onboarded a Social Media Manager.' },
+      { dates: 'Jun 2022 – Jun 2024', place: 'Los Angeles, CA — Remote', role: 'Digital Content & Marketing Specialist', org: 'CandidLeap', copy: 'Managed digital content and paid marketing for multiple client accounts across industries simultaneously. Executed paid and organic campaigns, SEO content, and email marketing in English and Spanish. Produced creative briefs, ad copy, and social media content aligned with client brand guidelines.' },
+      { dates: '2018–2019 & 2020–2022', place: 'Freelance — B2B', role: 'Marketing Consultant', org: 'SeaVision', copy: 'Content creation for social, paid ads, and email marketing for a B2B client, across two separate freelance engagement periods.' },
+      { dates: '2019–2022', place: 'Freelance — Real Estate', role: 'Freelance Marketing', org: 'Oppel Inmuebles', copy: 'Social media, email marketing, ads, and website work for a real estate client — including full website development.' },
+      { dates: '2009–2014', place: 'Miami, FL', role: 'Senior Creative Copywriter', org: 'M8 Digital Marketing Agency', copy: 'Led bilingual creative copy for major brand accounts including Sony, PlayStation, HBO, Volkswagen, and Starwood. Produced campaign concepts, scripts, and digital copy across paid, social, and email channels.' }
+    ];
+  }
+
   renderVals() {
-    const open = this.state.open;
-    const panel = (id) => ({
-      overflow: 'hidden',
-      transition: 'max-height .5s cubic-bezier(.4,0,.2,1), opacity .4s ease',
-      maxHeight: open[id] ? '1400px' : '0px',
-      opacity: open[id] ? 1 : 0
-    });
     return {
-      mobileOpen: this.state.mobileOpen,
+      latestJob: this.jobs().slice(0, 1),
       sent: this.state.sent,
       notSent: !this.state.sent,
-      toggleMobile: () => this.setState(s => ({ mobileOpen: !s.mobileOpen })),
-      closeMobile: () => this.setState({ mobileOpen: false }),
+      onSubmit: this.onSubmit,
       trackHero: () => this.track('cta_hero_clicked', {}),
-      trackHeroMobile: () => { this.track('cta_hero_clicked', {}); this.setState({ mobileOpen: false }); },
       trackResume: () => this.track('resume_downloaded', {}),
       trackCard1: () => this.track('case_study_card_clicked', { case_study_name: 'Passover 2026' }),
       trackCard2: () => this.track('case_study_card_clicked', { case_study_name: 'Hanukkah 2026' }),
       trackCard3: () => this.track('case_study_card_clicked', { case_study_name: 'Farmers Market' }),
       trackCard4: () => this.track('case_study_card_clicked', { case_study_name: 'Super Bowl' }),
-      toggle1: () => this.toggleCase(1, 'Passover 2026'),
-      toggle2: () => this.toggleCase(2, 'Hanukkah Meta Ads'),
-      toggle3: () => this.toggleCase(3, 'Farmers Market Incentive Program'),
-      toggle4: () => this.toggleCase(4, 'Super Bowl'),
-      sign1: open[1] ? '–' : '+',
-      sign2: open[2] ? '–' : '+',
-      sign3: open[3] ? '–' : '+',
-      sign4: open[4] ? '–' : '+',
-      panel1: panel(1), panel2: panel(2), panel3: panel(3), panel4: panel(4),
-      onSubmit: this.onSubmit
+      skills: [
+        { group: 'Paid Media / Growth', items: ['Meta Ads (advanced)', 'Google Ads (advanced)', 'Full-funnel DTC ownership', 'CRO / A/B testing', 'Campaign management & optimization'] },
+        { group: 'Analytics / Tracking', items: ['GA4', 'Meta Pixel', 'Google Tag Manager', 'Conversions API', 'Attribution & UTM (from scratch)', 'Stakeholder reporting'] },
+        { group: 'Email / Lifecycle', items: ['Beehiiv', 'ActiveCampaign', 'Segmentation', 'Lifecycle sequences', 'Migrations w/o list loss (5,000 subs)'] },
+        { group: 'Landing Pages / Web', items: ['Webflow', 'Full website development', 'Figma (wireframing)'] },
+        { group: 'Copywriting / Creative', items: ['10+ yrs senior copywriting', 'Conversion copywriting', 'Creative strategy', 'Ad copy', 'Bilingual EN/ES'] },
+        { group: 'Ops / Platforms', items: ['Toast', 'BentoBox', 'ClickUp', 'Loomly', 'Canva', 'Platform migrations'] },
+        { group: 'AI / Automation', items: ['Claude (daily operational use)', 'Claude Code (terminal)', 'Make (Integromat)'] }
+      ]
     };
   }
 }
+
 </script>
 </body>
 </html>
