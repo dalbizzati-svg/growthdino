@@ -23,9 +23,14 @@
     <div style="display:flex;gap:16px;transition:transform .5s cubic-bezier(.4,0,.2,1);transform:{{ track }}">
       <sc-for list="{{ items }}" as="m" hint-placeholder-count="3">
         <div style="width:340px;flex:0 0 340px;background:#1C1C18;border:1px solid #26261F">
-          <div style="aspect-ratio:4/5;background-image:repeating-linear-gradient(135deg,#232320 0 8px,#1C1C18 8px 16px);display:flex;flex-direction:column;justify-content:space-between;padding:14px">
-            <span style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:#F7D648;color:#131311;padding:5px 9px">{{ m.type }}</span>
-            <span style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#8A8A80;background:#131311;padding:5px 8px;align-self:flex-start">{{ m.slot }}</span>
+          <div style="aspect-ratio:4/5;background:#131311;position:relative;overflow:hidden">
+            <span style="position:absolute;top:10px;left:10px;z-index:1;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:#F7D648;color:#131311;padding:5px 9px">{{ m.type }}</span>
+            <sc-if value="{{ m.isVideo }}" hint-placeholder-val="{{ false }}">
+              <video src="{{ m.src }}" controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;display:block;background:#000"></video>
+            </sc-if>
+            <sc-if value="{{ m.isImage }}" hint-placeholder-val="{{ true }}">
+              <img src="{{ m.src }}" alt="{{ m.caption }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
+            </sc-if>
           </div>
           <div style="padding:16px;border-top:1px solid #26261F">
             <div style="font-size:15px;line-height:1.4;color:#FCFBF6">{{ m.caption }}</div>
@@ -63,7 +68,9 @@ class Component extends DCLogic {
     const items = (this.props.items || []).map(m => ({
       type: m.type || 'Creative',
       caption: m.caption || '',
-      slot: (m.kind === 'video' ? 'video · ' : 'image · ') + String(m.src || '').split('/').pop()
+      src: m.src || '',
+      isVideo: m.kind === 'video',
+      isImage: m.kind !== 'video'
     }));
     const max = Math.max(0, items.length - this.state.perView);
     const i = Math.min(this.state.i, max);
