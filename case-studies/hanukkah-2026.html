@@ -68,7 +68,7 @@
     </section>
 
     <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,5vw,56px) clamp(24px,3vw,32px)">
-      <dc-import name="CreativeSlider" items="{{ media }}" subtitle="Cold-audience ads, remarketing, and email." hint-size="100%,620px"></dc-import>
+      <dc-import name="CreativeSlider" items="{{ media }}" subtitle="Reels, static ads, email, and the on-site pop-up." hint-size="100%,620px"></dc-import>
     </section>
 
     <section style="max-width:1180px;margin:0 auto;padding:clamp(24px,3vw,32px) clamp(20px,5vw,56px)">
@@ -142,10 +142,18 @@ class Component extends DCLogic {
   renderVals() {
     return {
       media: [
-        { type: 'Ads', kind: 'image', src: '../assets/hanukkah/ad-holiday-1.png', caption: 'Regular campaign — cold contacts' },
-        { type: 'Ads', kind: 'image', src: '../assets/hanukkah/ad-holiday-2.png', caption: 'Remarketing — visited landing page, didn’t purchase' },
-        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-hanukkah.png', caption: 'Email marketing — Hanukkah' },
-        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-shofar.png', caption: 'Email marketing — “The Shofar’s Calling”' }
+        { type: 'Video', kind: 'video', src: '../assets/hanukkah/reel-latkes-closeup.mp4', poster: '../assets/hanukkah/reel-latkes-closeup-poster.jpg', caption: 'Instagram Reel — “Apple sauce or sour cream?”' },
+        { type: 'Video', kind: 'video', src: '../assets/hanukkah/reel-latkes-bts.mp4', poster: '../assets/hanukkah/reel-latkes-bts-poster.jpg', caption: 'Instagram Reel — behind the scenes, making latkes' },
+        { type: 'Ads', kind: 'image', src: '../assets/hanukkah/ad-nosh-up-hanukkah-story.jpg', caption: 'Meta ad — Stories/Reels format' },
+        { type: 'Ads', kind: 'image', src: '../assets/hanukkah/ad-nosh-up-hanukkah-square.jpg', caption: 'Meta ad — feed format' },
+        { type: 'Ads', kind: 'image', src: '../assets/hanukkah/ad-sufganiyot-square.jpg', caption: 'Product ad — sufganiyot' },
+        { type: 'Ads', kind: 'image', src: '../assets/hanukkah/ad-latkes-square.jpg', caption: 'Product ad — latkes' },
+        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-hanukkah.jpg', caption: 'Email — last call for pre-orders' },
+        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-shofar.jpg', caption: 'Email — “The Shofar’s Calling”' },
+        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-happy-hanukkah.jpg', caption: 'Email — “Happy Hanukkah!” + on-demand ordering' },
+        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-bundles.jpg', caption: 'Email — Hanukkah bundles' },
+        { type: 'Email', kind: 'image', src: '../assets/hanukkah/email-sufganiyot-back.jpg', caption: 'Email — “Sufganiyot are back”' },
+        { type: 'Web', kind: 'image', src: '../assets/hanukkah/website-popup-hanukkah.jpg', caption: 'Website pop-up' }
       ],
       rows: [
         { k: 'Total spend', v: '$405.86' },
