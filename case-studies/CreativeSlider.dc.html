@@ -25,8 +25,11 @@
         <div style="width:340px;flex:0 0 340px;background:#1C1C18;border:1px solid #26261F">
           <div style="aspect-ratio:4/5;background:#131311;position:relative;overflow:hidden">
             <span style="position:absolute;top:10px;left:10px;z-index:1;font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:#F7D648;color:#131311;padding:5px 9px">{{ m.type }}</span>
+            <button onClick="{{ m.openLightbox }}" aria-label="Enlarge" style="position:absolute;top:10px;right:10px;z-index:2;width:32px;height:32px;background:#F7D648;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;padding:0" style-hover="background:#FCFBF6">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#131311" stroke-width="2.5" stroke-linecap="round"><path d="M9 3H3v6M15 3h6v6M9 21H3v-6M15 21h6v-6"></path></svg>
+            </button>
             <sc-if value="{{ m.isVideo }}" hint-placeholder-val="{{ false }}">
-              <video src="{{ m.src }}" controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;display:block;background:#000"></video>
+              <video src="{{ m.src }}" poster="{{ m.poster }}" controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;display:block;background:#000"></video>
             </sc-if>
             <sc-if value="{{ m.isImage }}" hint-placeholder-val="{{ true }}">
               <img src="{{ m.src }}" alt="{{ m.caption }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block" />
@@ -45,19 +48,41 @@
       <span onClick="{{ d.on }}" style="width:30px;height:4px;cursor:pointer;background:{{ d.bg }}"></span>
     </sc-for>
   </div>
+
+  <sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ closeLightbox }}" style="position:fixed;inset:0;background:rgba(10,10,8,.94);z-index:1000;display:flex;align-items:center;justify-content:center;padding:40px">
+      <button onClick="{{ closeLightbox }}" aria-label="Close" style="position:absolute;top:24px;right:24px;width:44px;height:44px;background:transparent;border:1.5px solid #35352F;color:#FCFBF6;font-size:20px;line-height:1;cursor:pointer;z-index:1002">✕</button>
+      <button onClick="{{ lightboxPrev }}" aria-label="Previous" style="position:absolute;left:24px;top:50%;transform:translateY(-50%);width:48px;height:48px;background:transparent;border:1.5px solid #35352F;color:#FCFBF6;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;cursor:pointer;z-index:1002">←</button>
+      <button onClick="{{ lightboxNext }}" aria-label="Next" style="position:absolute;right:24px;top:50%;transform:translateY(-50%);width:48px;height:48px;background:transparent;border:1.5px solid #35352F;color:#FCFBF6;font-family:'Archivo',sans-serif;font-weight:700;font-size:16px;cursor:pointer;z-index:1002">→</button>
+      <div onClick="{{ stop }}" style="max-width:92vw;max-height:88vh;display:flex;flex-direction:column;align-items:center;gap:14px">
+        <sc-if value="{{ lightboxIsVideo }}" hint-placeholder-val="{{ false }}">
+          <video src="{{ lightboxSrc }}" poster="{{ lightboxPoster }}" controls autoplay playsinline style="max-width:92vw;max-height:78vh;display:block;background:#000"></video>
+        </sc-if>
+        <sc-if value="{{ lightboxIsImage }}" hint-placeholder-val="{{ true }}">
+          <img src="{{ lightboxSrc }}" alt="{{ lightboxCaption }}" style="max-width:92vw;max-height:78vh;display:block;object-fit:contain" />
+        </sc-if>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;color:#DAD8D0;text-align:center">{{ lightboxCaption }}</div>
+      </div>
+    </div>
+  </sc-if>
 </div>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:620},&quot;items&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;{type:string,kind:string,src:string,caption:string}[]&quot;},&quot;subtitle&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Drop the real assets into these slots — ads, emails, print, web.&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
-  state = { i: 0, perView: 3 };
+  state = { i: 0, perView: 3, lightbox: null };
 
   componentDidMount() {
     this.fit();
     this._on = () => this.fit();
     window.addEventListener('resize', this._on);
+    this._key = (e) => { if (e.key === 'Escape' && this.state.lightbox !== null) this.setState({ lightbox: null }); };
+    window.addEventListener('keydown', this._key);
   }
-  componentWillUnmount() { window.removeEventListener('resize', this._on); }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._on);
+    window.removeEventListener('keydown', this._key);
+  }
   fit() {
     const w = window.innerWidth;
     const perView = w < 720 ? 1 : w < 1080 ? 2 : 3;
@@ -65,16 +90,20 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const items = (this.props.items || []).map(m => ({
+    const items = (this.props.items || []).map((m, idx) => ({
       type: m.type || 'Creative',
       caption: m.caption || '',
       src: m.src || '',
+      poster: m.poster || '',
       isVideo: m.kind === 'video',
-      isImage: m.kind !== 'video'
+      isImage: m.kind !== 'video',
+      openLightbox: (e) => { e.stopPropagation(); this.setState({ lightbox: idx }); }
     }));
     const max = Math.max(0, items.length - this.state.perView);
     const i = Math.min(this.state.i, max);
     const clamp = n => Math.min(max, Math.max(0, n));
+    const lb = this.state.lightbox;
+    const lbItem = lb !== null && items[lb] ? items[lb] : null;
     return {
       items,
       counter: items.length ? `${i + 1}–${Math.min(items.length, i + this.state.perView)} of ${items.length}` : '—',
@@ -85,7 +114,17 @@ class Component extends DCLogic {
       dots: Array.from({ length: max + 1 }, (_, n) => ({
         bg: i === n ? '#F7D648' : '#35352F',
         on: () => this.setState({ i: n })
-      }))
+      })),
+      lightboxOpen: !!lbItem,
+      lightboxIsVideo: lbItem ? lbItem.isVideo : false,
+      lightboxIsImage: lbItem ? lbItem.isImage : true,
+      lightboxSrc: lbItem ? lbItem.src : '',
+      lightboxPoster: lbItem ? lbItem.poster : '',
+      lightboxCaption: lbItem ? lbItem.caption : '',
+      closeLightbox: () => this.setState({ lightbox: null }),
+      lightboxPrev: (e) => { e.stopPropagation(); this.setState(s => ({ lightbox: (s.lightbox - 1 + items.length) % items.length })); },
+      lightboxNext: (e) => { e.stopPropagation(); this.setState(s => ({ lightbox: (s.lightbox + 1) % items.length })); },
+      stop: (e) => e.stopPropagation()
     };
   }
 }
