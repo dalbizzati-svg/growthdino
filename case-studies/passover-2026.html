@@ -10,7 +10,7 @@
 <helmet>
 <meta charset="utf-8">
 <title>Passover 2026 Case Study — Dino Albizzati</title>
-<meta name="description" content="How I ran Zeitlin's highest-revenue holiday campaign to date — $7,472 gross, 4.27x Meta ROAS, 45.29% email open rate — reading price sensitivity in real time and adjusting mid-flight.">
+<meta name="description" content="How I ran Zeitlin's highest-revenue holiday campaign to date — 4.27x Meta ROAS, 45.29% email open rate, 52.9% of revenue from one product — reading price sensitivity in real time and adjusting mid-flight.">
 <meta property="og:title" content="Passover 2026 Case Study — Dino Albizzati">
 <meta property="og:type" content="article">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,12 +49,12 @@
       <a href="../index.html#case-studies" style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-decoration:none">← Back to all case studies</a>
       <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8A8A80;margin:clamp(26px,4vw,40px) 0 16px">Holiday Campaign · Meta Ads · Email · Local/In-person</div>
       <h1 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(34px,5.4vw,66px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:18ch;text-wrap:balance">Passover 2026: Full-Funnel Holiday Campaign</h1>
-      <p style="font-size:clamp(17px,1.7vw,21px);line-height:1.55;color:#DAD8D0;margin:20px 0 0;max-width:60ch;text-wrap:pretty">$7,472 in a single campaign — Zeitlin&rsquo;s highest-revenue holiday to date, built on reading price sensitivity in real time and adjusting mid-flight.</p>
+      <p style="font-size:clamp(17px,1.7vw,21px);line-height:1.55;color:#DAD8D0;margin:20px 0 0;max-width:60ch;text-wrap:pretty">Zeitlin&rsquo;s highest-revenue holiday to date — 4.27x Meta ROAS and a 45.29% email open rate, built on reading price sensitivity in real time and adjusting mid-flight.</p>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:clamp(32px,4vw,44px)">
         <div style="background:#F7D648;color:#131311;padding:24px">
-          <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(34px,4vw,48px);letter-spacing:-.045em;line-height:1">$7,472</div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin-top:10px">GROSS REVENUE · 44 ORDERS</div>
+          <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(34px,4vw,48px);letter-spacing:-.045em;line-height:1">44</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;margin-top:10px">ORDERS · SINGLE 4-WEEK CAMPAIGN</div>
         </div>
         <div style="background:#1C1C18;border:1px solid #26261F;padding:24px">
           <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(34px,4vw,48px);letter-spacing:-.045em;line-height:1;color:#7FD4F2">4.27x</div>
@@ -116,13 +116,13 @@
           <span style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:#8A8A80">PASSOVER 2026 · META + BEEHIIV + TOAST</span>
         </div>
         <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);font-family:'IBM Plex Mono',monospace;font-size:15px">
-          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="7">
+          <sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
             <div style="padding:16px 0;border-top:1px solid #2C2C25;color:#DAD8D0">{{ r.k }}</div>
             <div style="padding:16px 0;border-top:1px solid #2C2C25;color:#FCFBF6;font-weight:500;text-align:right">{{ r.v }}</div>
           </sc-for>
         </div>
         <ul style="font-size:16px;line-height:1.65;color:#DAD8D0;margin:clamp(26px,4vw,36px) 0 0;padding-left:20px;max-width:70ch;display:flex;flex-direction:column;gap:12px">
-          <li>$7,472 gross revenue, 44 orders — Zeitlin&rsquo;s highest-revenue holiday campaign to date, up from $4,309 at Purim.</li>
+          <li>44 orders in a single campaign — Zeitlin&rsquo;s highest-revenue holiday campaign to date.</li>
           <li>Meta: 4.27x platform ROAS on the main conversion campaign ($274 spend → 4 attributed purchases).</li>
           <li>Email: 45.29% average open rate across 44,246 sends (food/restaurant benchmark is ~20–25%).</li>
           <li>Full Seder Menu drove 52.9% of revenue from just 25% of orders — confirmed it as the anchor product, à la carte as the reach layer.</li>
@@ -174,9 +174,7 @@ class Component extends DCLogic {
         { type: 'Web', kind: 'image', src: '../assets/passover/website-popup-mobile.jpg', caption: 'Website pop-up (mobile)' }
       ],
       rows: [
-        { k: 'Gross revenue', v: '$7,472' },
         { k: 'Orders', v: '44' },
-        { k: 'Previous holiday benchmark (Purim)', v: '$4,309' },
         { k: 'Meta ROAS — main conversion campaign', v: '4.27x on $274 spend' },
         { k: 'Email sends / average open rate', v: '44,246 / 45.29%' },
         { k: 'Emails in sequence (main + investor list)', v: '13 (9 + 4)' },
