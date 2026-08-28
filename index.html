@@ -70,7 +70,7 @@
             <div style="position:relative;width:100%;max-width:220px;aspect-ratio:9/19.5;background:#1C1C18;border:1px solid #35352F;border-radius:34px;padding:10px;box-shadow:0 24px 60px -20px rgba(0,0,0,.6)">
               <div style="position:absolute;top:22px;left:50%;transform:translateX(-50%);width:70px;height:20px;background:#0A0A08;border-radius:10px;z-index:2"></div>
               <div style="width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000">
-                <video src="{{ heroClipSrc }}" autoplay muted playsinline onCanPlay="{{ forceMutedPlay }}" onEnded="{{ nextHeroClip }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+                <video id="hero-phone-video" src="{{ heroClipSrc }}" autoplay muted playsinline onCanPlay="{{ forceMutedPlay }}" onEnded="{{ nextHeroClip }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
               </div>
             </div>
             <span style="display:flex;flex-direction:column;gap:5px;margin-top:clamp(16px,2.4vw,22px);font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(11px,1.3vw,13px);letter-spacing:.13em;text-transform:uppercase;text-align:right">
@@ -339,6 +339,14 @@ class Component extends DCLogic {
     el.muted = true;
     el.play().catch(() => {});
   };
+
+  componentDidMount() {
+    const el = document.getElementById('hero-phone-video');
+    if (el) {
+      el.muted = true;
+      el.play().catch(() => {});
+    }
+  }
 
   track(name, params) {
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') window.gtag('event', name, params || {});
