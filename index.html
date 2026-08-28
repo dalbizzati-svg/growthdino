@@ -64,27 +64,19 @@
       <div style="max-width:1180px;margin:0 auto">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8A8A80;margin-bottom:clamp(24px,4vw,36px)">Growth Marketing · Creative Copywriting</div>
 
-        <div style="display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,0.7fr);gap:clamp(28px,5vw,64px);align-items:end">
-          <h1 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(32px,4.8vw,64px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:22ch;text-wrap:balance">Full-funnel growth ownership — without a five-person team&rsquo;s price tag.</h1>
-          <div style="display:flex;flex-direction:column;align-items:flex-end">
-            <div style="position:relative;width:100%;max-width:220px;aspect-ratio:9/19.5;background:#1C1C18;border:1px solid #35352F;border-radius:34px;padding:10px;box-shadow:0 24px 60px -20px rgba(0,0,0,.6)">
-              <div style="position:absolute;top:22px;left:50%;transform:translateX(-50%);width:70px;height:20px;background:#0A0A08;border-radius:10px;z-index:2"></div>
-              <div style="width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000">
-                <video src="{{ heroClipSrc }}" autoplay muted playsinline onCanPlay="{{ forceMutedPlay }}" onEnded="{{ nextHeroClip }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
-              </div>
-            </div>
-            <span style="display:flex;flex-direction:column;gap:5px;margin-top:clamp(16px,2.4vw,22px);font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(11px,1.3vw,13px);letter-spacing:.13em;text-transform:uppercase;text-align:right">
-              <span style="color:#F7D648">Data minded.</span>
-              <span style="color:#FCFBF6">Creative thinking.</span>
-              <span style="color:#7FD4F2">Result driven.</span>
-            </span>
-          </div>
-        </div>
+        <h1 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(32px,4.8vw,64px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:22ch;text-wrap:balance">Full-funnel growth ownership — without a five-person team&rsquo;s price tag.</h1>
         <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:#DAD8D0;max-width:58ch;margin:24px 0 0;text-wrap:pretty">I ran 100% of paid media, email, and analytics solo for a multi-location business, grounded in senior copywriting for <span style="color:#FCFBF6;border-bottom:2px solid #F7D648">Sony, PlayStation, HBO, Volkswagen, and Starwood</span>.</p>
 
         <div style="display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0">
           <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.02em;color:#131311;background:#F7D648;text-decoration:none;padding:16px 26px" style-hover="background:#FCFBF6">Book a 15-Minute Intro Call</a>
           <a href="./Dino_Albizzati_CV.pdf" download onClick="{{ trackResume }}" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;color:#FCFBF6;border:1.5px solid #35352F;text-decoration:none;padding:14.5px 26px" style-hover="border-color:#F7D648;color:#F7D648">Download My Resume ↓</a>
+        </div>
+
+        <div style="position:relative;width:100%;max-width:280px;aspect-ratio:9/16;background:#1C1C18;border:1px solid #35352F;border-radius:34px;padding:10px;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);margin-top:clamp(36px,5vw,52px)">
+          <div style="position:absolute;top:22px;left:50%;transform:translateX(-50%);width:70px;height:20px;background:#0A0A08;border-radius:10px;z-index:2"></div>
+          <div style="width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000">
+            <video src="{{ heroClipSrc }}" autoplay muted playsinline preload="auto" onCanPlay="{{ forceMutedPlay }}" onLoadedData="{{ forceMutedPlay }}" onEnded="{{ nextHeroClip }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
+          </div>
         </div>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:clamp(44px,6vw,76px)">
@@ -341,10 +333,21 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
-    const el = document.querySelector('video');
-    if (el) {
-      el.muted = true;
-      el.play().catch(() => {});
+    const kick = () => {
+      const el = document.querySelector('video');
+      if (el) {
+        el.muted = true;
+        el.play().catch(() => {});
+      }
+      return el;
+    };
+    if (!kick()) {
+      // Video element not in the DOM yet on first tick — retry briefly.
+      let tries = 0;
+      const t = setInterval(() => {
+        tries += 1;
+        if (kick() || tries > 20) clearInterval(t);
+      }, 100);
     }
   }
 
