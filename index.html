@@ -144,54 +144,10 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
-      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(220px,0.5fr) minmax(0,1.5fr);gap:clamp(28px,5vw,72px);align-items:start">
-        <div>
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">01 — About</div>
-          <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-.04em;margin:16px 0 0">I write what goes in the channels I run.</h2>
-        </div>
-        <div style="font-size:clamp(16px,1.35vw,18.5px);line-height:1.72;color:#DAD8D0;max-width:64ch">
-          <p style="margin:0 0 1.1em;text-wrap:pretty">Before I ran growth, I wrote copy for Sony, PlayStation, HBO, Volkswagen, and Starwood — five years as a senior copywriter that&rsquo;s still the foundation everything else is built on. I don&rsquo;t just run channels. I write what goes in them.</p>
-          <p style="margin:0 0 1.1em;text-wrap:pretty">From there I moved into growth ownership. Two years managing content and paid marketing across multiple client accounts inside a digital agency (CandidLeap, 2022–2024). Freelance growth consulting for B2B and real estate clients along the way. And most recently, two years owning 100% of marketing for Zeitlin&rsquo;s Delicatessen — paid media, email, GA4 attribution, weekly reporting to ownership, creative direction — entirely remote from Argentina. That role also included leading a Wefunder equity crowdfunding round that raised $150K+ from 200+ investors.</p>
-          <p style="margin:0 0 1.1em;text-wrap:pretty">I&rsquo;m not a one-channel specialist. I&rsquo;m who you bring in to own outcomes end-to-end — including reading the data honestly when something doesn&rsquo;t work, and changing course because of it. <a href="case-studies/super-bowl.html" style="color:#7FD4F2">(See the Super Bowl case study — the one that didn&rsquo;t work, and what I did about it.)</a></p>
-          <p style="margin:0 0 1.6em;text-wrap:pretty">I&rsquo;m currently looking for Head of Marketing / Growth Marketing Manager roles at startups and SMBs (10–100 people), where that kind of ownership is the job — not a nice-to-have.</p>
-          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#FCFBF6;border-bottom:2px solid #F7D648;text-decoration:none;padding-bottom:4px">Book a 15-Minute Intro Call →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" style="background:#1C1C18;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px);border-top:1px solid #26261F;border-bottom:1px solid #26261F">
-      <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">02 — Experience</div>
-        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 clamp(28px,4vw,44px);max-width:20ch">Ten years between the data and the copy.</h2>
-
-        <div style="display:flex;flex-direction:column">
-          <sc-for list="{{ latestJob }}" as="j" hint-placeholder-count="1">
-            <div style="display:grid;grid-template-columns:minmax(180px,0.4fr) minmax(0,1.6fr);gap:clamp(20px,4vw,56px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid #2C2C25">
-              <div>
-                <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:#F7D648">{{ j.dates }}</div>
-                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80;margin-top:6px">{{ j.place }}</div>
-              </div>
-              <div>
-                <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em;margin:0">{{ j.role }} <span style="color:#5F5F57">·</span> <span style="color:#7FD4F2">{{ j.org }}</span></h3>
-                <p style="font-size:16px;line-height:1.68;color:#DAD8D0;margin:12px 0 0;max-width:70ch;text-wrap:pretty">{{ j.copy }}</p>
-              </div>
-            </div>
-          </sc-for>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid #2C2C25;padding-top:24px">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80">Before this: CandidLeap, SeaVision, Oppel Inmuebles, and five years as a senior copywriter at M8 (Sony, PlayStation, HBO, Volkswagen, Starwood).</span>
-          <a href="Experience.html" style="font-family:'Archivo Black',sans-serif;font-size:13px;color:#131311;background:#F7D648;text-decoration:none;padding:14px 22px" style-hover="background:#FCFBF6">Full working history →</a>
-        </div>
-      </div>
-    </section>
-
     <!-- CASE STUDIES -->
     <section id="case-studies" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
       <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">03 — Case Studies</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">01 — Case Studies</div>
         <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 12px;max-width:24ch">Four campaigns from Zeitlin&rsquo;s — including the one that failed.</h2>
         <p style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8A80;margin:0 0 clamp(32px,4vw,48px)">Each with its own page: numbers first, creative up front, full data below.</p>
 
@@ -224,6 +180,50 @@
             <p style="font-size:15.5px;line-height:1.55;color:#3C3C36;margin:12px 0 0;max-width:44ch">The campaign that failed — and the process change it led to.</p>
             <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px">Read the case study →</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
+      <div style="max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(220px,0.5fr) minmax(0,1.5fr);gap:clamp(28px,5vw,72px);align-items:start">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">02 — About</div>
+          <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.4vw,44px);line-height:1;letter-spacing:-.04em;margin:16px 0 0">I write what goes in the channels I run.</h2>
+        </div>
+        <div style="font-size:clamp(16px,1.35vw,18.5px);line-height:1.72;color:#DAD8D0;max-width:64ch">
+          <p style="margin:0 0 1.1em;text-wrap:pretty">Before I ran growth, I wrote copy for Sony, PlayStation, HBO, Volkswagen, and Starwood — five years as a senior copywriter that&rsquo;s still the foundation everything else is built on. I don&rsquo;t just run channels. I write what goes in them.</p>
+          <p style="margin:0 0 1.1em;text-wrap:pretty">From there I moved into growth ownership. Two years managing content and paid marketing across multiple client accounts inside a digital agency (CandidLeap, 2022–2024). Freelance growth consulting for B2B and real estate clients along the way. And most recently, two years owning 100% of marketing for Zeitlin&rsquo;s Delicatessen — paid media, email, GA4 attribution, weekly reporting to ownership, creative direction — entirely remote from Argentina. That role also included leading a Wefunder equity crowdfunding round that raised $150K+ from 200+ investors.</p>
+          <p style="margin:0 0 1.1em;text-wrap:pretty">I&rsquo;m not a one-channel specialist. I&rsquo;m who you bring in to own outcomes end-to-end — including reading the data honestly when something doesn&rsquo;t work, and changing course because of it. <a href="case-studies/super-bowl.html" style="color:#7FD4F2">(See the Super Bowl case study — the one that didn&rsquo;t work, and what I did about it.)</a></p>
+          <p style="margin:0 0 1.6em;text-wrap:pretty">I&rsquo;m currently looking for Head of Marketing / Growth Marketing Manager roles at startups and SMBs (10–100 people), where that kind of ownership is the job — not a nice-to-have.</p>
+          <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#FCFBF6;border-bottom:2px solid #F7D648;text-decoration:none;padding-bottom:4px">Book a 15-Minute Intro Call →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" style="background:#1C1C18;padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px);border-top:1px solid #26261F;border-bottom:1px solid #26261F">
+      <div style="max-width:1180px;margin:0 auto">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">03 — Experience</div>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 clamp(28px,4vw,44px);max-width:20ch">Ten years between the data and the copy.</h2>
+
+        <div style="display:flex;flex-direction:column">
+          <sc-for list="{{ latestJob }}" as="j" hint-placeholder-count="1">
+            <div style="display:grid;grid-template-columns:minmax(180px,0.4fr) minmax(0,1.6fr);gap:clamp(20px,4vw,56px);padding:clamp(24px,3vw,36px) 0;border-top:1px solid #2C2C25">
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;color:#F7D648">{{ j.dates }}</div>
+                <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80;margin-top:6px">{{ j.place }}</div>
+              </div>
+              <div>
+                <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.3vw,28px);line-height:1.15;letter-spacing:-.02em;margin:0">{{ j.role }} <span style="color:#5F5F57">·</span> <span style="color:#7FD4F2">{{ j.org }}</span></h3>
+                <p style="font-size:16px;line-height:1.68;color:#DAD8D0;margin:12px 0 0;max-width:70ch;text-wrap:pretty">{{ j.copy }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;border-top:1px solid #2C2C25;padding-top:24px">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#8A8A80">Before this: CandidLeap, SeaVision, Oppel Inmuebles, and five years as a senior copywriter at M8 (Sony, PlayStation, HBO, Volkswagen, Starwood).</span>
+          <a href="Experience.html" style="font-family:'Archivo Black',sans-serif;font-size:13px;color:#131311;background:#F7D648;text-decoration:none;padding:14px 22px" style-hover="background:#FCFBF6">Full working history →</a>
         </div>
       </div>
     </section>
