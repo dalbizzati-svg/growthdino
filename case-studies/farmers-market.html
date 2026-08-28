@@ -68,7 +68,7 @@
     </section>
 
     <section style="max-width:1180px;margin:0 auto;padding:clamp(40px,5vw,64px) clamp(20px,5vw,56px) clamp(24px,3vw,32px)">
-      <dc-import name="CreativeSlider" items="{{ media }}" subtitle="Incentive cards, market signage, and the on-site presence." hint-size="100%,620px"></dc-import>
+      <dc-import name="CreativeSlider" items="{{ media }}" subtitle="Incentive cards and market signage." hint-size="100%,620px"></dc-import>
     </section>
 
     <section style="max-width:1180px;margin:0 auto;padding:clamp(24px,3vw,32px) clamp(20px,5vw,56px)">
@@ -140,7 +140,6 @@ class Component extends DCLogic {
   renderVals() {
     return {
       media: [
-        { type: 'Video', kind: 'video', src: '../assets/farmers-market/market-video.mp4', poster: '../assets/farmers-market/market-video-poster.jpg', caption: 'Farmers market presence' },
         { type: 'Print', kind: 'image', src: '../assets/farmers-market/incentive-card-1.jpg', caption: 'Bagel + catering incentive card' },
         { type: 'Print', kind: 'image', src: '../assets/farmers-market/incentive-card-2.jpg', caption: 'Incentive card — alternate design' },
         { type: 'Print', kind: 'image', src: '../assets/farmers-market/a-frame.jpg', caption: 'A-frame sign for winter markets' },
