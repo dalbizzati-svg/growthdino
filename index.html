@@ -51,6 +51,36 @@
     .nav-mobile { display: block; }
   }
   @keyframes dinoMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    column-gap: clamp(28px,5vw,64px);
+    grid-template-areas:
+      "eyebrow eyebrow"
+      "heading phone"
+      "para phone"
+      "cta phone"
+      "stats stats";
+  }
+  .hero-eyebrow { grid-area: eyebrow; }
+  .hero-heading { grid-area: heading; align-self: start; }
+  .hero-para { grid-area: para; }
+  .hero-cta { grid-area: cta; align-self: start; }
+  .hero-phone { grid-area: phone; justify-self: end; align-self: start; }
+  .hero-stats { grid-area: stats; }
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "eyebrow"
+        "heading"
+        "para"
+        "cta"
+        "phone"
+        "stats";
+    }
+    .hero-phone { justify-self: start; }
+  }
 </style>
 </helmet>
 
@@ -62,24 +92,25 @@
     <!-- HERO -->
     <section style="padding:clamp(56px,8vw,104px) clamp(20px,5vw,56px) clamp(40px,5vw,64px)">
       <div style="max-width:1180px;margin:0 auto">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8A8A80;margin-bottom:clamp(24px,4vw,36px)">Growth Marketing · Creative Copywriting</div>
+       <div class="hero-grid">
+        <div class="hero-eyebrow" style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#8A8A80;margin-bottom:clamp(24px,4vw,36px)">Growth Marketing · Creative Copywriting</div>
 
-        <h1 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(32px,4.8vw,64px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:22ch;text-wrap:balance">Full-funnel growth ownership — without a five-person team&rsquo;s price tag.</h1>
-        <p style="font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:#DAD8D0;max-width:58ch;margin:24px 0 0;text-wrap:pretty">I ran 100% of paid media, email, and analytics solo for a multi-location business, grounded in senior copywriting for <span style="color:#FCFBF6;border-bottom:2px solid #F7D648">Sony, PlayStation, HBO, Volkswagen, and Starwood</span>.</p>
+        <h1 class="hero-heading" style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(32px,4.8vw,64px);line-height:.98;letter-spacing:-.045em;margin:0;max-width:22ch;text-wrap:balance">Full-funnel growth ownership — without a five-person team&rsquo;s price tag.</h1>
+        <p class="hero-para" style="font-size:clamp(16px,1.7vw,20px);line-height:1.6;color:#DAD8D0;max-width:58ch;margin:24px 0 0;text-wrap:pretty">I ran 100% of paid media, email, and analytics solo for a multi-location business, grounded in senior copywriting for <span style="color:#FCFBF6;border-bottom:2px solid #F7D648">Sony, PlayStation, HBO, Volkswagen, and Starwood</span>.</p>
 
-        <div style="display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0">
+        <div class="hero-cta" style="display:flex;flex-wrap:wrap;gap:12px;margin:36px 0 0">
           <a href="https://calendly.com/dinoalbizzati/30min" target="_blank" rel="noopener" onClick="{{ trackHero }}" style="font-family:'Archivo Black',sans-serif;font-size:14px;letter-spacing:.02em;color:#131311;background:#F7D648;text-decoration:none;padding:16px 26px" style-hover="background:#FCFBF6">Book a 15-Minute Intro Call</a>
           <a href="./Dino_Albizzati_CV.pdf" download onClick="{{ trackResume }}" style="font-family:'Archivo',sans-serif;font-weight:700;font-size:14px;color:#FCFBF6;border:1.5px solid #35352F;text-decoration:none;padding:14.5px 26px" style-hover="border-color:#F7D648;color:#F7D648">Download My Resume ↓</a>
         </div>
 
-        <div style="position:relative;width:100%;max-width:280px;aspect-ratio:9/16;background:#1C1C18;border:1px solid #35352F;border-radius:34px;padding:10px;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);margin-top:clamp(36px,5vw,52px)">
+        <div class="hero-phone" style="position:relative;width:100%;max-width:280px;aspect-ratio:9/16;background:#1C1C18;border:1px solid #35352F;border-radius:34px;padding:10px;box-shadow:0 24px 60px -20px rgba(0,0,0,.6);margin-top:clamp(36px,5vw,52px)">
           <div style="position:absolute;top:22px;left:50%;transform:translateX(-50%);width:70px;height:20px;background:#0A0A08;border-radius:10px;z-index:2"></div>
           <div style="width:100%;height:100%;border-radius:24px;overflow:hidden;background:#000">
             <video src="{{ heroClipSrc }}" autoplay muted playsinline preload="auto" onCanPlay="{{ forceMutedPlay }}" onLoadedData="{{ forceMutedPlay }}" onEnded="{{ nextHeroClip }}" style="width:100%;height:100%;object-fit:cover;display:block"></video>
           </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:clamp(44px,6vw,76px)">
+        <div class="hero-stats" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-top:clamp(44px,6vw,76px)">
           <div style="background:#1C1C18;padding:26px 24px;border-left:3px solid #F7D648">
             <div style="font-family:'Archivo Black',sans-serif;font-size:clamp(32px,4vw,46px);letter-spacing:-.04em;color:#F7D648;line-height:1">4.27x</div>
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#8A8A80;margin-top:12px">META ROAS, HIGHEST-GROSSING CAMPAIGN (PASSOVER 2026)</div>
@@ -97,6 +128,7 @@
             <div style="font-family:'IBM Plex Mono',monospace;font-size:11.5px;line-height:1.6;color:#8A8A80;margin-top:12px">AVERAGE EMAIL OPEN RATE (VS. ~20–25% BENCHMARK)</div>
           </div>
         </div>
+       </div>
       </div>
     </section>
 
