@@ -173,7 +173,7 @@
     <section id="case-studies" style="padding:clamp(64px,9vw,120px) clamp(20px,5vw,56px)">
       <div style="max-width:1180px;margin:0 auto">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#8A8A80">01 — Case Studies</div>
-        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 12px;max-width:24ch">Four campaigns from Zeitlin&rsquo;s — including the one that failed.</h2>
+        <h2 style="font-family:'Archivo Black',sans-serif;font-weight:400;font-size:clamp(28px,3.6vw,46px);line-height:1;letter-spacing:-.04em;margin:16px 0 12px;max-width:24ch">Four campaigns from Zeitlin&rsquo;s — plus the video reel behind them, including the one that failed.</h2>
         <p style="font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:#8A8A80;margin:0 0 clamp(32px,4vw,48px)">Each with its own page: numbers first, creative up front, full data below.</p>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px">
@@ -204,6 +204,13 @@
             <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Super Bowl: What Didn&rsquo;t Work</h3>
             <p style="font-size:15.5px;line-height:1.55;color:#3C3C36;margin:12px 0 0;max-width:44ch">The campaign that failed — and the process change it led to.</p>
             <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-top:auto;padding-top:26px">Read the case study →</span>
+          </a>
+          <a href="case-studies/video-creative.html" onClick="{{ trackCard5 }}" style="display:flex;flex-direction:column;background:#1C1C18;border:1px solid #26261F;color:#FCFBF6;padding:clamp(24px,3vw,34px);text-decoration:none;transition:transform .2s ease,border-color .2s ease" style-hover="transform:translateY(-3px);border-color:#7FD4F2">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#8A8A80;margin-bottom:16px">Video · Paid + Organic · Scripts</div>
+            <div style="font-family:'Archivo Black',sans-serif;font-size:44px;letter-spacing:-.045em;line-height:1;color:#7FD4F2">14</div>
+            <h3 style="font-family:'Archivo',sans-serif;font-weight:700;font-size:clamp(20px,2.2vw,26px);line-height:1.14;letter-spacing:-.02em;margin:14px 0 0">Video Creative: Paid, Organic, and the Scripts Behind Them</h3>
+            <p style="font-size:15.5px;line-height:1.55;color:#DAD8D0;margin:12px 0 0;max-width:44ch">Comedy, story, product, testimonial — plus 3 full shot-list scripts.</p>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7FD4F2;margin-top:auto;padding-top:26px">Read the case study →</span>
           </a>
         </div>
       </div>
@@ -425,6 +432,7 @@ class Component extends DCLogic {
       trackCard2: () => this.track('case_study_card_clicked', { case_study_name: 'Hanukkah 2026' }),
       trackCard3: () => this.track('case_study_card_clicked', { case_study_name: 'Farmers Market' }),
       trackCard4: () => this.track('case_study_card_clicked', { case_study_name: 'Super Bowl' }),
+      trackCard5: () => this.track('case_study_card_clicked', { case_study_name: 'Video Creative' }),
       skills: [
         { group: 'Paid Media / Growth', items: ['Meta Ads (advanced)', 'Google Ads (advanced)', 'Full-funnel DTC ownership', 'CRO / A/B testing', 'Campaign management & optimization'] },
         { group: 'Analytics / Tracking', items: ['GA4', 'Meta Pixel', 'Google Tag Manager', 'Conversions API', 'Attribution & UTM (from scratch)', 'Stakeholder reporting'] },
